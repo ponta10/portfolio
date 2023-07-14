@@ -11,7 +11,7 @@ interface ButtonProps {
 const CustomButton = styled.button<ButtonProps>`
   background-color: ${(props) => props.bgColor || props.theme.colors.accent};
   color: ${(props) => props.color || props.theme.colors.base};
-  padding: 12px 36px;
+  padding: 8px 24px;
   border-radius: 8px;
   width: ${(props) => props.width || "auto"};
 `;

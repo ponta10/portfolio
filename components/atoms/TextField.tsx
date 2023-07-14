@@ -32,6 +32,7 @@ const TextArea = styled.textarea`
 const Label = styled.label`
   color: ${(props) => props.theme.colors.subText};
   text-align: left;
+  font-size: ${(props) => props.theme.fontSizes.sm};
 `;
 
 export const TextField: React.FC<TextFieldProps> = ({
