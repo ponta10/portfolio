@@ -13,7 +13,7 @@ const theme = {
         md: '16px',
         lg: '20px',
         xl: '40px',
-        xxl: '60px',
+        xxl: '48px',
         xxxl: '80px',
     }
 }

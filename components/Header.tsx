@@ -5,7 +5,6 @@ const Container = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: ${(props) => props.theme.colors.text};
   padding: 20px;
   position: fixed;
   top: 0;
@@ -25,7 +24,6 @@ const Nav = styled.nav`
 `;
 
 const NavItem = styled.a`
-  color: ${(props) => props.theme.colors.text};
   text-decoration: none;
 
   &:hover {
