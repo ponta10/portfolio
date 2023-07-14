@@ -1,5 +1,6 @@
 import React from "react";
-import { styled } from "styled-components";
+import { Link } from "react-scroll";
+import styled from "styled-components";
 
 const Container = styled.header`
   display: flex;
@@ -23,8 +24,9 @@ const Nav = styled.nav`
   gap: 40px;
 `;
 
-const NavItem = styled.a`
+const NavItem = styled(Link)`
   text-decoration: none;
+  cursor: pointer;
 
   &:hover {
     text-decoration: underline;
@@ -36,10 +38,46 @@ export const Header = () => {
     <Container>
       <Logo>Logo</Logo>
       <Nav>
-        <NavItem href="#about">ABOUT</NavItem>
-        <NavItem href="#work">WORK</NavItem>
-        <NavItem href="#skill">SKILL</NavItem>
-        <NavItem href="#contact">CONTACT</NavItem>
+        <NavItem
+          activeClass="active"
+          to="about"
+          spy={true}
+          smooth={true}
+          offset={-70}
+          duration={600}
+        >
+          ABOUT
+        </NavItem>
+        <NavItem
+          activeClass="active"
+          to="work"
+          spy={true}
+          smooth={true}
+          offset={-70}
+          duration={600}
+        >
+          WORK
+        </NavItem>
+        <NavItem
+          activeClass="active"
+          to="skill"
+          spy={true}
+          smooth={true}
+          offset={-70}
+          duration={600}
+        >
+          SKILL
+        </NavItem>
+        <NavItem
+          activeClass="active"
+          to="contact"
+          spy={true}
+          smooth={true}
+          offset={-70}
+          duration={600}
+        >
+          CONTACT
+        </NavItem>
       </Nav>
     </Container>
   );

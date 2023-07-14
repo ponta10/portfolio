@@ -10,9 +10,11 @@
     "lint:fix": "next lint --fix"
   },
   "dependencies": {
+    "@hookform/resolvers": "^3.1.1",
     "@types/node": "20.4.2",
     "@types/react": "18.2.14",
     "@types/react-dom": "18.2.7",
+    "@types/react-scroll": "^1.8.7",
     "@types/styled-components": "^5.1.26",
     "@typescript-eslint/eslint-plugin": "^6.0.0",
     "@typescript-eslint/parser": "^6.0.0",
@@ -26,8 +28,12 @@
     "prettier": "^3.0.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-hook-form": "^7.45.1",
+    "react-icons": "^4.10.1",
+    "react-scroll": "^1.8.9",
     "styled-components": "^6.0.4",
     "tailwindcss": "3.3.2",
-    "typescript": "5.1.6"
+    "typescript": "5.1.6",
+    "zod": "^3.21.4"
   }
 }
