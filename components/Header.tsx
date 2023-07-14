@@ -43,7 +43,7 @@ export const Header = () => {
           to="about"
           spy={true}
           smooth={true}
-          offset={-70}
+          offset={-40}
           duration={600}
         >
           ABOUT
@@ -53,7 +53,7 @@ export const Header = () => {
           to="work"
           spy={true}
           smooth={true}
-          offset={-70}
+          offset={-40}
           duration={600}
         >
           WORK
@@ -63,7 +63,7 @@ export const Header = () => {
           to="skill"
           spy={true}
           smooth={true}
-          offset={-70}
+          offset={-40}
           duration={600}
         >
           SKILL
@@ -73,7 +73,7 @@ export const Header = () => {
           to="contact"
           spy={true}
           smooth={true}
-          offset={-70}
+          offset={-40}
           duration={600}
         >
           CONTACT

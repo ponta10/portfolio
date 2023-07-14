@@ -13,11 +13,13 @@ const Container = styled.div<{ direction: "left" | "center" | "right" }>`
 
 const Title = styled.h2`
   font-size: ${(props) => props.theme.fontSizes.xxl};
+  letter-spacing: 5px;
 `;
 
 const SubTitle = styled.h3`
   font-size: ${(props) => props.theme.fontSizes.lg};
   color: ${(props) => props.theme.colors.subText};
+  letter-spacing: 3px;
 `;
 
 export const Caption: React.FC<Caption> = ({ title, subTitle, direction }) => {

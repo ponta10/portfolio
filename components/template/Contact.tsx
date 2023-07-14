@@ -10,6 +10,11 @@ import { AiFillGithub } from "react-icons/ai";
 import { AiFillTwitterCircle } from "react-icons/ai";
 import { AiFillInstagram } from "react-icons/ai";
 
+const Container = styled.div`
+width: 80%;
+margin: 0 auto;
+`
+
 const FormContainer = styled.div`
   text-align: center;
   width: 60%;
@@ -43,7 +48,7 @@ export const Contact = () => {
     console.log(data);
   };
   return (
-    <div>
+    <Container>
       <Caption title="CONTACT" subTitle="get in touch" direction="center" />
       <Form schema={schema} onSubmit={onSubmit}>
         {({ register }) => (
@@ -87,6 +92,6 @@ export const Contact = () => {
         </a>
       </IconContainer>
       <Footer />
-    </div>
+    </Container>
   );
 };

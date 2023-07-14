@@ -13,6 +13,11 @@ const timelineData = [
   { year: "2023", event: "ヤフー株式会社サマーインターン" },
 ];
 
+const Container = styled.div`
+width: 80%;
+margin: 0 auto;
+`
+
 const Timeline = styled.div`
   display: flex;
   align-items: center;
@@ -41,9 +46,13 @@ const ProfileContainer = styled.div`
   display: flex;
   justify-content: space-between;
 //   align-items: center;
-  gap: 40px;
+//   gap: 40px;
   margin-top: 40px;
-  margin-bottom: 60px;
+//   margin-bottom: 60px;
+  border: 1px solid ${(props) => props.theme?.colors.gray};
+  box-shadow: 1px 1px 2px ${(props) => props.theme?.colors.gray};
+  padding: 48px;
+  background: linear-gradient(150deg, #222, #000);
 `;
 
 const TextContainer = styled.div`
@@ -52,14 +61,16 @@ const TextContainer = styled.div`
 
 const Name = styled.div`
   font-size: ${(props) => props.theme.fontSizes.xl};
+  letter-spacing: 3px;
 `;
 
 const Detail = styled.p`
   color: ${(props) => props.theme.colors.subText};
   margin: 20px 0;
-  width: 80ch; // chは文字の0の幅を基準にした単位です。 
-  white-space: pre-wrap; // 改行と空白を保持し、必要に応じて折り返します。
-  word-wrap: break-word; // 単語が要素の境界を超える場合に折り返します。
+  width: 80%;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  letter-spacing: 1px;
 `;
 
 const StyledLink = styled.div`
@@ -70,13 +81,19 @@ const StyledLink = styled.div`
   color: ${(props) => props.theme.colors.subText};
 `;
 
+const StyledImage = styled(Image)`
+//   filter: contrast(1.2) brightness(0.9);
+  drop-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
+`;
+
+
 export const About = () => {
   return (
-    <div>
+    <Container>
       <Caption title="ABOUT" subTitle="introduce my profile" direction="left" />
       <ProfileContainer>
         <TextContainer>
-          <Name>三浦広太</Name>
+          <Name>三浦 広太</Name>
           <Detail>
             埼玉県出身の現役慶應義塾大学生。大学生活の初めにIT技術に
             惹かれプログラミング学習を開始。学生団体でweb技術の基礎を
@@ -106,9 +123,9 @@ export const About = () => {
             </a>
           </StyledLink>
         </TextContainer>
-        <Image src={backImage} width={500} height={500} alt="Profile Image" />
+        <StyledImage src={backImage} width={500} height={500} alt="Profile Image" />
       </ProfileContainer>
-      <Timeline>
+      {/* <Timeline>
         {timelineData.map((item, index) => (
           <React.Fragment key={index}>
             <Event>
@@ -118,7 +135,7 @@ export const About = () => {
             {index < timelineData.length - 1 && <Line />}
           </React.Fragment>
         ))}
-      </Timeline>
-    </div>
+      </Timeline> */}
+    </Container>
   );
 };

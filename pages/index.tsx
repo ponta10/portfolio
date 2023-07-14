@@ -1,11 +1,11 @@
 import styled from "styled-components";
 import { Header } from "@/components/Header";
-import { Caption } from "@/components/Caption";
 import { Element } from "react-scroll";
 import { Contact } from "@/components/template/Contact";
 import { Top } from "@/components/template/Top";
 import { Skill } from "@/components/template/Skill";
 import { About } from "@/components/template/About";
+import { Work } from "@/components/template/Work";
 
 const HomePageWrapper = styled.div`
   position: relative;
@@ -19,12 +19,18 @@ const HomePageWrapper = styled.div`
 
 const HomePageWrapperBlack = styled(HomePageWrapper)`
   background-color: ${(props) => props.theme.colors.base};
-  padding: 60px 100px;
+  padding: 60px;
+  display: flex;
+flex-direction: column;
+justify-content: center;
 `;
 
 const HomePageWrapperGrey = styled(HomePageWrapper)`
   background-color: ${(props) => props.theme.colors.sub};
-  padding: 80px 100px;
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 `;
 
 export default function Home() {
@@ -43,11 +49,7 @@ export default function Home() {
       </Element>
       <Element name="work">
         <HomePageWrapperBlack>
-          <Caption
-            title="WORK"
-            subTitle="showcase of creations"
-            direction="right"
-          />
+          <Work />
         </HomePageWrapperBlack>
       </Element>
       <Element name="skill">

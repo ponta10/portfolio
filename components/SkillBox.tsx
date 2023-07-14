@@ -15,6 +15,7 @@ const Container = styled.div`
   align-items: center;
   width: 100px;
   box-shadow: 1px 1px 2px ${(props) => props.theme.colors.subText};
+  cursor: pointer;
 `;
 
 const Text = styled.p`
