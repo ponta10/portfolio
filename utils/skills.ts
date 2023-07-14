@@ -23,7 +23,7 @@ export const backends: Skill[] = [
     { id: 1, name: 'PHP', image: `${BASE_URL}/php.png` },
     { id: 2, name: 'Laravel', image: `${BASE_URL}/laravel.png` },
     { id: 3, name: 'Node.js', image: `${BASE_URL}/node.png` },
-    { id: 4, name: 'Express', image: `${BASE_URL}/express.png` },
+    { id: 4, name: 'Express', image: `${BASE_URL}/express2.png` },
     { id: 5, name: 'Nest.js', image: `${BASE_URL}/nest.png` },
     { id: 6, name: 'Go', image: `${BASE_URL}/go.png` },
     { id: 7, name: 'Python', image: `${BASE_URL}/python.png` },
@@ -33,7 +33,7 @@ export const backends: Skill[] = [
 
 export const devops: Skill[] = [
     { id: 1, name: 'GitHub', image: `${BASE_URL}/github.png` },
-    { id: 2, name: 'AWS', image: `${BASE_URL}/aws.png` },
+    { id: 2, name: 'AWS', image: `${BASE_URL}/aws2.png` },
     { id: 3, name: 'Dokcer', image: `${BASE_URL}/docker.png` },
     { id: 4, name: 'Firebase', image: `${BASE_URL}/firebase.png` },
 ]

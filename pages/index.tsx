@@ -5,6 +5,7 @@ import { Element } from "react-scroll";
 import { Contact } from "@/components/template/Contact";
 import { Top } from "@/components/template/Top";
 import { Skill } from "@/components/template/Skill";
+import { About } from "@/components/template/About";
 
 const HomePageWrapper = styled.div`
   position: relative;
@@ -23,7 +24,7 @@ const HomePageWrapperBlack = styled(HomePageWrapper)`
 
 const HomePageWrapperGrey = styled(HomePageWrapper)`
   background-color: ${(props) => props.theme.colors.sub};
-  padding: 60px 100px;
+  padding: 80px 100px;
 `;
 
 export default function Home() {
@@ -37,11 +38,7 @@ export default function Home() {
       </Element>
       <Element name="about">
         <HomePageWrapperGrey>
-          <Caption
-            title="ABOUT"
-            subTitle="introduce my profile"
-            direction="left"
-          />
+          <About />
         </HomePageWrapperGrey>
       </Element>
       <Element name="work">
