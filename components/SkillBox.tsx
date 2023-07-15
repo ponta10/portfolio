@@ -1,8 +1,8 @@
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import { styled } from "styled-components";
-import backImage from "@/public/html.png";
 import { Skill } from "@/utils/skills";
+import { Modal } from "./organisms/Modal";
 
 const Container = styled.div`
   background-color: ${(props) => props.theme.colors.gray};
@@ -16,6 +16,9 @@ const Container = styled.div`
   width: 100px;
   box-shadow: 1px 1px 2px ${(props) => props.theme.colors.subText};
   cursor: pointer;
+  &:hover {
+    background-color: ${(props) => props.theme.colors.sub};
+  }
 `;
 
 const Text = styled.p`
@@ -34,18 +37,33 @@ const Box = styled.div`
 `;
 
 export const SkillBox: React.FC<Skill> = ({ name, image }) => {
+  const [isOpen, setIsOpen] = useState<boolean>(false);
   return (
-    <Container>
-      <Box>
-        <Image
-          src={image}
-          alt="Background Image"
-          priority
-          width={40}
-          height={40}
-        />
-      </Box>
-      <Text>{name}</Text>
-    </Container>
+    <>
+      <Modal open={isOpen} onClose={() => setIsOpen(false)}>
+        <Box>
+          <Image
+            src={image}
+            alt="Background Image"
+            priority
+            width={40}
+            height={40}
+          />
+        </Box>
+        <Text>{name}</Text>
+      </Modal>
+      <Container onClick={() => setIsOpen(true)}>
+        <Box>
+          <Image
+            src={image}
+            alt="Background Image"
+            priority
+            width={40}
+            height={40}
+          />
+        </Box>
+        <Text>{name}</Text>
+      </Container>
+    </>
   );
 };

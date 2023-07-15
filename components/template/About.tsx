@@ -14,9 +14,9 @@ const timelineData = [
 ];
 
 const Container = styled.div`
-width: 80%;
-margin: 0 auto;
-`
+  width: 80%;
+  margin: 0 auto;
+`;
 
 const Timeline = styled.div`
   display: flex;
@@ -32,9 +32,9 @@ const Event = styled.div`
 `;
 
 const Year = styled.div`
-font-size: ${(props) => props.theme?.fontSizes.md};
-margin-bottom: 4px;
-`
+  font-size: ${(props) => props.theme?.fontSizes.md};
+  margin-bottom: 4px;
+`;
 
 const Line = styled.div`
   flex-grow: 1;
@@ -45,10 +45,10 @@ const Line = styled.div`
 const ProfileContainer = styled.div`
   display: flex;
   justify-content: space-between;
-//   align-items: center;
-//   gap: 40px;
+  //   align-items: center;
+  //   gap: 40px;
   margin-top: 40px;
-//   margin-bottom: 60px;
+  //   margin-bottom: 60px;
   border: 1px solid ${(props) => props.theme?.colors.gray};
   box-shadow: 1px 1px 2px ${(props) => props.theme?.colors.gray};
   padding: 48px;
@@ -82,10 +82,9 @@ const StyledLink = styled.div`
 `;
 
 const StyledImage = styled(Image)`
-//   filter: contrast(1.2) brightness(0.9);
+  //   filter: contrast(1.2) brightness(0.9);
   drop-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
 `;
-
 
 export const About = () => {
   return (
@@ -123,7 +122,12 @@ export const About = () => {
             </a>
           </StyledLink>
         </TextContainer>
-        <StyledImage src={backImage} width={500} height={500} alt="Profile Image" />
+        <StyledImage
+          src={backImage}
+          width={500}
+          height={500}
+          alt="Profile Image"
+        />
       </ProfileContainer>
       {/* <Timeline>
         {timelineData.map((item, index) => (

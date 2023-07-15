@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Header } from "@/components/Header";
+import { Header } from "@/components/organisms/Header";
 import { Element } from "react-scroll";
 import { Contact } from "@/components/template/Contact";
 import { Top } from "@/components/template/Top";
@@ -21,8 +21,8 @@ const HomePageWrapperBlack = styled(HomePageWrapper)`
   background-color: ${(props) => props.theme.colors.base};
   padding: 60px;
   display: flex;
-flex-direction: column;
-justify-content: center;
+  flex-direction: column;
+  justify-content: center;
 `;
 
 const HomePageWrapperGrey = styled(HomePageWrapper)`

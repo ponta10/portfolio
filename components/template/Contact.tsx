@@ -2,7 +2,7 @@ import React from "react";
 import { Caption } from "../Caption";
 import { TextField } from "../atoms/TextField";
 import { Button } from "../atoms/Button";
-import { Footer } from "../Footer";
+import { Footer } from "../organisms/Footer";
 import { styled } from "styled-components";
 import { z } from "zod";
 import { FieldValues, Form } from "../atoms/Form";
@@ -11,9 +11,9 @@ import { AiFillTwitterCircle } from "react-icons/ai";
 import { AiFillInstagram } from "react-icons/ai";
 
 const Container = styled.div`
-width: 80%;
-margin: 0 auto;
-`
+  width: 80%;
+  margin: 0 auto;
+`;
 
 const FormContainer = styled.div`
   text-align: center;

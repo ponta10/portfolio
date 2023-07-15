@@ -5,9 +5,9 @@ import { backends, devops, frontends } from "@/utils/skills";
 import { styled } from "styled-components";
 
 const Container = styled.div`
-width: 80%;
-margin: 0 auto;
-`
+  width: 80%;
+  margin: 0 auto;
+`;
 
 export const Skill = () => {
   return (
