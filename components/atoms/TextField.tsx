@@ -7,6 +7,7 @@ interface TextFieldProps {
   multiline?: boolean;
   rows?: number;
   registration?: object;
+  error?: any;
 }
 
 const Container = styled.div`
@@ -35,12 +36,20 @@ const Label = styled.label`
   font-size: ${(props) => props.theme.fontSizes.sm};
 `;
 
+const ErrorText = styled.span`
+  color: red;
+  font-size: ${(props) => props.theme.fontSizes.md};
+  margin-top: 0.5em;
+  text-align: left;
+`;
+
 export const TextField: React.FC<TextFieldProps> = ({
   label,
   type = "text",
   multiline = false,
   rows,
   registration,
+  error,
 }) => {
   return (
     <Container>
@@ -50,6 +59,7 @@ export const TextField: React.FC<TextFieldProps> = ({
       ) : (
         <InputField {...registration} type={type} />
       )}
+      {error && <ErrorText>{error}</ErrorText>}
     </Container>
   );
 };

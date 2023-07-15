@@ -52,7 +52,7 @@ const ModalContent = styled.div<ModalContentProps>`
         `
       : "none"};
   box-shadow: 1px 1px 5px ${(props) => props.theme.colors.sub};
-  height: 50vh;
+  maxHeight: 50vh;
 `;
 
 const CloseIcon = styled(AiOutlineClose)`

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Caption } from "../Caption";
 import { TextField } from "../atoms/TextField";
 import { Button } from "../atoms/Button";
@@ -9,6 +9,7 @@ import { FieldValues, Form } from "../atoms/Form";
 import { AiFillGithub } from "react-icons/ai";
 import { AiFillTwitterCircle } from "react-icons/ai";
 import { AiFillInstagram } from "react-icons/ai";
+import { Modal } from "../organisms/Modal";
 
 const Container = styled.div`
   width: 80%;
@@ -39,34 +40,41 @@ const GreyLine = styled.hr`
 `;
 
 const schema = z.object({
-  email: z.string().email(),
-  content: z.string(),
+  email: z.string().email('メールアドレスの形式で入力してください').nonempty('必須です'),
+  content: z.string().nonempty('必須です'),
 });
 
 export const Contact = () => {
+  const [isOpen, setIsOpen] = useState<boolean>(false);
   const onSubmit = (data: FieldValues) => {
     console.log(data);
+    setIsOpen(true)
   };
   return (
     <Container>
       <Caption title="CONTACT" subTitle="get in touch" direction="center" />
       <Form schema={schema} onSubmit={onSubmit}>
-        {({ register }) => (
+        {({ register, formState: {errors} }) => (
           <FormContainer>
             <TextField
               registration={register("email")}
               label="メールアドレス"
+              error={errors.email?.message}
             />
             <TextField
               registration={register("content")}
               label="お問い合わせ内容"
               multiline
               rows={7}
+              error={errors.content?.message}
             />
             <Button width="30%">送信</Button>
           </FormContainer>
         )}
       </Form>
+      <Modal open={isOpen} onClose={() => setIsOpen(false)}>
+        <p>送信が完了しました</p>
+      </Modal>
       <GreyLine />
       <IconContainer>
         <a
