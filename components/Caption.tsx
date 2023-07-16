@@ -9,6 +9,7 @@ interface Caption {
 
 const Container = styled.div<{ direction: "left" | "center" | "right" }>`
   text-align: ${(props) => props.direction};
+  margin-bottom: 40px;
 `;
 
 const Title = styled.h2`

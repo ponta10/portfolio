@@ -10,6 +10,7 @@ interface SkillContainer {
 
 const Container = styled.div`
   margin-top: 36px;
+  text-align: right;
 `;
 
 const Label = styled.div`
@@ -22,6 +23,7 @@ const Box = styled.div`
   display: flex;
   gap: 16px;
   flex-wrap: wrap;
+  justify-content: flex-end;
 `;
 
 export const SkillContainer: React.FC<SkillContainer> = ({ label, data }) => {

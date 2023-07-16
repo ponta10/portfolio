@@ -13,7 +13,7 @@ export const Work = () => {
       <Caption
         title="WORK"
         subTitle="showcase of creations"
-        direction="right"
+        direction="left"
       />
     </Container>
   );

@@ -15,7 +15,7 @@ export const Skill = () => {
       <Caption
         title="SKILL"
         subTitle="my technical proficiency"
-        direction="left"
+        direction="right"
       />
       <SkillContainer label="frontend" data={frontends} />
       <SkillContainer label="backend" data={backends} />

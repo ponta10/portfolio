@@ -6,6 +6,7 @@ import { Top } from "@/components/template/Top";
 import { Skill } from "@/components/template/Skill";
 import { About } from "@/components/template/About";
 import { Work } from "@/components/template/Work";
+import { Career } from "@/components/template/Career";
 
 const HomePageWrapper = styled.div`
   position: relative;
@@ -47,20 +48,25 @@ export default function Home() {
           <About />
         </HomePageWrapperGrey>
       </Element>
-      <Element name="work">
+      <Element name="career">
         <HomePageWrapperBlack>
-          <Work />
+          <Career />
         </HomePageWrapperBlack>
       </Element>
-      <Element name="skill">
+      <Element name="work">
         <HomePageWrapperGrey>
-          <Skill />
+          <Work />
         </HomePageWrapperGrey>
       </Element>
-      <Element name="contact">
+      <Element name="skill">
         <HomePageWrapperBlack>
-          <Contact />
+          <Skill />
         </HomePageWrapperBlack>
+      </Element>
+      <Element name="contact">
+        <HomePageWrapperGrey>
+          <Contact />
+        </HomePageWrapperGrey>
       </Element>
     </>
   );

@@ -50,6 +50,16 @@ export const Header = () => {
         </NavItem>
         <NavItem
           activeClass="active"
+          to="career"
+          spy={true}
+          smooth={true}
+          offset={-40}
+          duration={600}
+        >
+          CAREER
+        </NavItem>
+        <NavItem
+          activeClass="active"
           to="work"
           spy={true}
           smooth={true}
