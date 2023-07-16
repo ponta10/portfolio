@@ -2,6 +2,14 @@ import React from "react";
 import { Link } from "react-scroll";
 import styled from "styled-components";
 
+const Underline = styled.span`
+  display: block;
+  width: 0;
+  height: 2px;
+  background: ${(props) => props.theme.colors.accent};
+  transition: width 0.3s;
+`;
+
 const Container = styled.header`
   display: flex;
   justify-content: space-between;
@@ -27,9 +35,16 @@ const Nav = styled.nav`
 const NavItem = styled(Link)`
   text-decoration: none;
   cursor: pointer;
+  color: ${(props) => props.theme.colors.primary};
+  position: relative;
+  padding: 2px 0;
 
   &:hover {
-    text-decoration: underline;
+    color: ${(props) => props.theme.colors.accent};
+
+    ${Underline} {
+      width: 100%;
+    }
   }
 `;
 
@@ -47,6 +62,7 @@ export const Header = () => {
           duration={600}
         >
           ABOUT
+          <Underline />
         </NavItem>
         <NavItem
           activeClass="active"
@@ -57,6 +73,7 @@ export const Header = () => {
           duration={600}
         >
           CAREER
+          <Underline />
         </NavItem>
         <NavItem
           activeClass="active"
@@ -67,6 +84,7 @@ export const Header = () => {
           duration={600}
         >
           WORK
+          <Underline />
         </NavItem>
         <NavItem
           activeClass="active"
@@ -77,6 +95,7 @@ export const Header = () => {
           duration={600}
         >
           SKILL
+          <Underline />
         </NavItem>
         <NavItem
           activeClass="active"
@@ -87,6 +106,7 @@ export const Header = () => {
           duration={600}
         >
           CONTACT
+          <Underline />
         </NavItem>
       </Nav>
     </Container>

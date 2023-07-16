@@ -1,6 +1,6 @@
-import React from 'react'
-import { Caption } from '../Caption'
-import { styled } from 'styled-components';
+import React from "react";
+import { Caption } from "../Caption";
+import { styled } from "styled-components";
 
 const Container = styled.div`
   width: 80%;
@@ -9,47 +9,47 @@ const Container = styled.div`
 
 // Event タイプの定義
 interface Event {
-    year: string;
-    description: string;
-  }
-  
-  // 経歴データ
-  const events: Event[] = [
-    {
-      year: '2002',
-      description: '埼玉県で爆誕'
-    },
-    {
-      year: '2018',
-      description: '浦和高等学校入学'
-    },
-    {
-      year: '2021',
-      description: '慶應義塾大学入学'
-    },
-    {
-      year: '2021',
-      description: '学生団体POSSE入会'
-    },
-    {
-      year: '2022',
-      description: '株式会社パーツワンインターン'
-    },
-    {
-      year: '2023',
-      description: 'ヤフー株式会社サマーインターン'
-    },
-  ];
-  
-  // Styled components
-  const TimelineWrapper = styled.div`
+  year: string;
+  description: string;
+}
+
+// 経歴データ
+const events: Event[] = [
+  {
+    year: "2002",
+    description: "埼玉県で爆誕",
+  },
+  {
+    year: "2018",
+    description: "浦和高等学校入学",
+  },
+  {
+    year: "2021",
+    description: "慶應義塾大学入学",
+  },
+  {
+    year: "2021",
+    description: "学生団体POSSE入会",
+  },
+  {
+    year: "2022",
+    description: "株式会社パーツワンインターン",
+  },
+  {
+    year: "2023",
+    description: "ヤフー株式会社サマーインターン",
+  },
+];
+
+// Styled components
+const TimelineWrapper = styled.div`
   position: relative;
   margin: 30px auto;
   &:after {
-    content: '';
+    content: "";
     position: absolute;
     width: 2px;
-    background: ${(props) => props.theme.colors.subText};
+    background: ${(props) => props.theme.colors.accent};
     top: 0;
     bottom: 0;
     left: 50%;
@@ -117,45 +117,49 @@ const EventLeft = styled(Event)`
 `;
 
 interface TextProps {
-    size?: "sm" | "md" | "lg";
-    as?: 'p' | 'span';
-  }
-  
-  const Text = styled.p<TextProps>`
-    color: ${(props) => props.theme.colors.subText};
-    font-size: ${(props) => {
-      switch (props.size) {
-        case "sm":
-          return props.theme.fontSizes.sm;
-        case "md":
-          return props.theme.fontSizes.md;
-        case "lg":
-          return props.theme.fontSizes.lg;
-        default:
-          return props.theme.fontSizes.md; // if none of the above matches, apply 'md' size
-      }
-    }};
-  `;
+  size?: "sm" | "md" | "lg";
+  as?: "p" | "span";
+}
+
+const Text = styled.p<TextProps>`
+  color: ${(props) => props.theme.colors.subText};
+  font-size: ${(props) => {
+    switch (props.size) {
+      case "sm":
+        return props.theme.fontSizes.sm;
+      case "md":
+        return props.theme.fontSizes.md;
+      case "lg":
+        return props.theme.fontSizes.lg;
+      default:
+        return props.theme.fontSizes.md; // if none of the above matches, apply 'md' size
+    }
+  }};
+`;
 
 export const Career = () => {
   return (
     <Container>
-      <Caption title="CAREER" subTitle="my professional journey" direction="right" />
+      <Caption
+        title="CAREER"
+        subTitle="my professional journey"
+        direction="right"
+      />
       <TimelineWrapper>
-    {events.map((event, index) => {
-      const EventComponent = index % 2 === 0 ? EventLeft : EventRight;
-      return (
-        <EventComponent key={index}>
-          <EventDot />
-          <EventLine />
-          <div className="box">
-            <Text>{event.year}</Text>
-            <Text size="lg">{event.description}</Text>
-          </div>
-        </EventComponent>
-      );
-    })}
-  </TimelineWrapper>
+        {events.map((event, index) => {
+          const EventComponent = index % 2 === 0 ? EventLeft : EventRight;
+          return (
+            <EventComponent key={index}>
+              <EventDot />
+              <EventLine />
+              <div className="box">
+                <Text>{event.year}</Text>
+                <Text size="lg">{event.description}</Text>
+              </div>
+            </EventComponent>
+          );
+        })}
+      </TimelineWrapper>
     </Container>
-  )
-}
+  );
+};

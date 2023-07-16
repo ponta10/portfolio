@@ -23,7 +23,7 @@ const Container = styled.div`
 
 interface TextProps {
   size?: "sm" | "md" | "lg";
-  as?: 'p' | 'span';
+  as?: "p" | "span";
 }
 
 const Text = styled.p<TextProps>`
@@ -44,12 +44,11 @@ const Text = styled.p<TextProps>`
 `;
 
 interface BoxProps {
-    height: number;
-  }
-  
+  height: number;
+}
 
 const Box = styled.div<BoxProps>`
-  height: ${(props) => props.height}px;;
+  height: ${(props) => props.height}px;
   display: flex; // Add these
   flex-direction: column;
   justify-content: center;
@@ -70,21 +69,33 @@ export const SkillBox: React.FC<Skill> = ({ name, image, work, personal }) => {
       <Modal open={isOpen} onClose={() => setIsOpen(false)}>
         <ModalContainer>
           <div style={{ textAlign: "center" }}>
-          <Box height={96}>
+            <Box height={96}>
               <Image
                 src={image}
                 alt="Background Image"
                 priority
-                width={80} 
+                width={80}
                 height={80}
               />
             </Box>
             <Text>{name}</Text>
           </div>
           <div>
-            <Text>実務経験: <Text size="lg" as="span">{work}</Text> 年</Text>
-            <Text>個人経験: <Text size="lg" as="span">{personal}</Text> 年</Text>
-          </div> 
+            <Text>
+              実務経験:{" "}
+              <Text size="lg" as="span">
+                {work}
+              </Text>{" "}
+              年
+            </Text>
+            <Text>
+              個人経験:{" "}
+              <Text size="lg" as="span">
+                {personal}
+              </Text>{" "}
+              年
+            </Text>
+          </div>
         </ModalContainer>
       </Modal>
       <Container onClick={() => setIsOpen(true)}>

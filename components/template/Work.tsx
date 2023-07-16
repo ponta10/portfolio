@@ -10,11 +10,7 @@ const Container = styled.div`
 export const Work = () => {
   return (
     <Container>
-      <Caption
-        title="WORK"
-        subTitle="showcase of creations"
-        direction="left"
-      />
+      <Caption title="WORK" subTitle="showcase of creations" direction="left" />
     </Container>
   );
 };
