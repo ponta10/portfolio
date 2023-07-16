@@ -31,7 +31,13 @@ export const SkillContainer: React.FC<SkillContainer> = ({ label, data }) => {
       <Box>
         {" "}
         {data?.map((skill) => (
-          <SkillBox key={skill?.id} name={skill?.name} image={skill?.image} />
+          <SkillBox
+            key={skill?.id}
+            name={skill?.name}
+            image={skill?.image}
+            work={skill?.work}
+            personal={skill?.personal}
+          />
         ))}
       </Box>
     </Container>

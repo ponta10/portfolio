@@ -40,21 +40,24 @@ const GreyLine = styled.hr`
 `;
 
 const schema = z.object({
-  email: z.string().email('メールアドレスの形式で入力してください').nonempty('必須です'),
-  content: z.string().nonempty('必須です'),
+  email: z
+    .string()
+    .email("メールアドレスの形式で入力してください")
+    .nonempty("必須です"),
+  content: z.string().nonempty("必須です"),
 });
 
 export const Contact = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const onSubmit = (data: FieldValues) => {
     console.log(data);
-    setIsOpen(true)
+    setIsOpen(true);
   };
   return (
     <Container>
       <Caption title="CONTACT" subTitle="get in touch" direction="center" />
       <Form schema={schema} onSubmit={onSubmit}>
-        {({ register, formState: {errors} }) => (
+        {({ register, formState: { errors } }) => (
           <FormContainer>
             <TextField
               registration={register("email")}

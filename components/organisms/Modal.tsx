@@ -52,7 +52,7 @@ const ModalContent = styled.div<ModalContentProps>`
         `
       : "none"};
   box-shadow: 1px 1px 5px ${(props) => props.theme.colors.sub};
-  maxHeight: 50vh;
+  maxheight: 50vh;
 `;
 
 const CloseIcon = styled(AiOutlineClose)`
@@ -66,7 +66,7 @@ export const Modal: React.FC<ModalProps> = ({
   open,
   onClose,
   children,
-  width = 600,
+  width = 400,
 }) => {
   useEffect(() => {
     if (open) {
