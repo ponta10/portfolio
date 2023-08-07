@@ -39,6 +39,14 @@ const NavItem = styled(Link)`
   position: relative;
   padding: 2px 0;
 
+  &.active {
+    color: ${(props) => props.theme.colors.accent};
+
+    ${Underline} {
+      width: 100%;
+    }
+  }
+
   &:hover {
     color: ${(props) => props.theme.colors.accent};
 
