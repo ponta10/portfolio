@@ -37,7 +37,7 @@ const HomePageWrapperGrey = styled(HomePageWrapper)`
 export default function Home() {
   return (
     <>
-      <Element name="home">
+      <Element name="top">
         <HomePageWrapper>
           <Header />
           <Top />

@@ -3,6 +3,7 @@ import { Caption } from "../Caption";
 import { styled } from "styled-components";
 import { SlideRight } from "../animations/SlideRight";
 import { FadeIn } from "../animations/FadeIn";
+import { SlideLeft } from "../animations/SlideLeft";
 
 const Container = styled.div`
   width: 80%;
@@ -149,23 +150,30 @@ export const Career = () => {
           direction="right"
         />
       </SlideRight>
-      <FadeIn>
-        <TimelineWrapper>
-          {events.map((event, index) => {
-            const EventComponent = index % 2 === 0 ? EventLeft : EventRight;
-            return (
-              <EventComponent key={index}>
-                <EventDot />
-                <EventLine />
-                <div className="box">
-                  <Text>{event.year}</Text>
-                  <Text size="lg">{event.description}</Text>
-                </div>
-              </EventComponent>
-            );
-          })}
-        </TimelineWrapper>
-      </FadeIn>
+      <TimelineWrapper>
+        {events.map((event, index) => {
+          const EventComponent = index % 2 === 0 ? EventLeft : EventRight;
+
+          const WrappedEvent = (
+            <EventComponent key={index}>
+              <EventDot />
+              <EventLine />
+              <div className="box">
+                <Text>{event.year}</Text>
+                <Text size="lg">{event.description}</Text>
+              </div>
+            </EventComponent>
+          );
+
+          // indexが偶数の場合、SlideLeftで囲む
+          if (index % 2 === 0) {
+            return <SlideLeft key={index}>{WrappedEvent}</SlideLeft>;
+          }
+
+          // indexが奇数の場合、SlideRightで囲む
+          return <SlideRight key={index}>{WrappedEvent}</SlideRight>;
+        })}
+      </TimelineWrapper>
     </Container>
   );
 };

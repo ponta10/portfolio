@@ -34,8 +34,13 @@ const WorkContainer = styled.div`
 
 const WorkBoxContainer = styled.a`
   width: calc(34% - 40px);
+  color: #fff; // 文字色を白に設定
   height: 42%;
   margin-bottom: 40px;
+  &:hover {
+    opacity: 0.9;
+    color: ${(props) => props.theme.colors.accent};
+  }
 `;
 
 const WorkBox = styled.div<{ bgImage: string }>`
@@ -48,10 +53,10 @@ const WorkBox = styled.div<{ bgImage: string }>`
   background-position: center; // 背景画像の位置を中央に設定
   margin-bottom: 20px;
   margin-top: -20px;
+  transform: all 0.3s linear;
 `;
 
 const WorkTitle = styled.span`
-  color: #fff; // 文字色を白に設定
   text-align: center;
   display: block;
 `;

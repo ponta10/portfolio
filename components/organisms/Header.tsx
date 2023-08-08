@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-scroll";
 import styled from "styled-components";
+import Image from "next/image";
+import image from "@/public/logo.png";
 
 const Underline = styled.span`
   display: block;
@@ -13,7 +15,7 @@ const Underline = styled.span`
 const Container = styled.header`
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  // align-items: center;
   padding: 20px;
   position: fixed;
   top: 0;
@@ -23,8 +25,9 @@ const Container = styled.header`
   padding: 40px;
 `;
 
-const Logo = styled.h1`
+const Logo = styled(Link)`
   margin: 0;
+  cursor: pointer;  
 `;
 
 const Nav = styled.nav`
@@ -59,7 +62,21 @@ const NavItem = styled(Link)`
 export const Header = () => {
   return (
     <Container>
-      <Logo>Logo</Logo>
+      <Logo
+        to="top"
+        activeClass="active"
+        spy={true}
+        smooth={true}
+        duration={600}
+      >
+        <Image
+          src={image}
+          alt="Background Image"
+          priority
+          width={120}
+          height={120}
+        />
+      </Logo>
       <Nav>
         <NavItem
           activeClass="active"
