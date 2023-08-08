@@ -1,6 +1,8 @@
 import React from "react";
 import { Caption } from "../Caption";
 import { styled } from "styled-components";
+import { SlideRight } from "../animations/SlideRight";
+import { FadeIn } from "../animations/FadeIn";
 
 const Container = styled.div`
   width: 80%;
@@ -20,10 +22,6 @@ const events: Event[] = [
     description: "埼玉県で爆誕",
   },
   {
-    year: "2018",
-    description: "浦和高等学校入学",
-  },
-  {
     year: "2021",
     description: "慶應義塾大学入学",
   },
@@ -38,6 +36,10 @@ const events: Event[] = [
   {
     year: "2023",
     description: "ヤフー株式会社サマーインターン",
+  },
+  {
+    year: "2023",
+    description: "株式会社CARTA HOLDINGSサマーインターン",
   },
 ];
 
@@ -140,26 +142,30 @@ const Text = styled.p<TextProps>`
 export const Career = () => {
   return (
     <Container>
-      <Caption
-        title="CAREER"
-        subTitle="my professional journey"
-        direction="right"
-      />
-      <TimelineWrapper>
-        {events.map((event, index) => {
-          const EventComponent = index % 2 === 0 ? EventLeft : EventRight;
-          return (
-            <EventComponent key={index}>
-              <EventDot />
-              <EventLine />
-              <div className="box">
-                <Text>{event.year}</Text>
-                <Text size="lg">{event.description}</Text>
-              </div>
-            </EventComponent>
-          );
-        })}
-      </TimelineWrapper>
+      <SlideRight>
+        <Caption
+          title="CAREER"
+          subTitle="my professional journey"
+          direction="right"
+        />
+      </SlideRight>
+      <FadeIn>
+        <TimelineWrapper>
+          {events.map((event, index) => {
+            const EventComponent = index % 2 === 0 ? EventLeft : EventRight;
+            return (
+              <EventComponent key={index}>
+                <EventDot />
+                <EventLine />
+                <div className="box">
+                  <Text>{event.year}</Text>
+                  <Text size="lg">{event.description}</Text>
+                </div>
+              </EventComponent>
+            );
+          })}
+        </TimelineWrapper>
+      </FadeIn>
     </Container>
   );
 };

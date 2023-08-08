@@ -3,6 +3,9 @@ import { Caption } from "../Caption";
 import { styled } from "styled-components";
 import Image from "next/image";
 import backImage from "@/public/ponta.jpg";
+import { FadeIn } from "../animations/FadeIn";
+import { SlideLeft } from "../animations/SlideLeft";
+import { SlideUp } from "../animations/SlideUp";
 
 const timelineData = [
   { year: "2002", event: "埼玉県で爆誕" },
@@ -89,57 +92,54 @@ const StyledImage = styled(Image)`
 export const About = () => {
   return (
     <Container>
-      <Caption title="ABOUT" subTitle="introduce my profile" direction="left" />
-      <ProfileContainer>
-        <TextContainer>
-          <Name>三浦 広太</Name>
-          <Detail>
-            埼玉県出身の現役慶應義塾大学生。大学生活の初めにIT技術に
-            惹かれプログラミング学習を開始。学生団体でweb技術の基礎を
-            学びハッカソンや長期チーム開発に出場。毎回2位以上の成績を収めている。現在はフロントエンド
-            エンジニアとしてインターンシップを行なっている。
-            好きな技術はReactとGo。
-          </Detail>
-          <StyledLink>
-            <span>Blog:</span>
-            <a
-              href="https://pontaro.net"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              https://pontaro.net
-            </a>
-          </StyledLink>
-
-          <StyledLink>
-            <span>Github:</span>
-            <a
-              href="https://github.com/ponta10"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              https://github.com/ponta10
-            </a>
-          </StyledLink>
-        </TextContainer>
-        <StyledImage
-          src={backImage}
-          width={500}
-          height={500}
-          alt="Profile Image"
+      <SlideLeft>
+        <Caption
+          title="ABOUT"
+          subTitle="introduce my profile"
+          direction="left"
         />
-      </ProfileContainer>
-      {/* <Timeline>
-        {timelineData.map((item, index) => (
-          <React.Fragment key={index}>
-            <Event>
-              <Year>{item.year}</Year>
-              <div>{item.event}</div>
-            </Event>
-            {index < timelineData.length - 1 && <Line />}
-          </React.Fragment>
-        ))}
-      </Timeline> */}
+      </SlideLeft>
+      <FadeIn>
+        <ProfileContainer>
+          <TextContainer>
+            <Name>三浦 広太</Name>
+            <Detail>
+              埼玉県出身の現役慶應義塾大学生。大学生活の初めにIT技術に
+              惹かれプログラミング学習を開始。学生団体でweb技術の基礎を
+              学びハッカソンや長期チーム開発に出場。毎回2位以上の成績を収めている。現在はフロントエンド
+              エンジニアとしてインターンシップを行なっている。
+              好きな技術はReactとGo。
+            </Detail>
+            <StyledLink>
+              <span>Blog:</span>
+              <a
+                href="https://pontaro.net"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                https://pontaro.net
+              </a>
+            </StyledLink>
+
+            <StyledLink>
+              <span>Github:</span>
+              <a
+                href="https://github.com/ponta10"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                https://github.com/ponta10
+              </a>
+            </StyledLink>
+          </TextContainer>
+          <StyledImage
+            src={backImage}
+            width={500}
+            height={500}
+            alt="Profile Image"
+          />
+        </ProfileContainer>
+      </FadeIn>
     </Container>
   );
 };
