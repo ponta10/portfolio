@@ -10,6 +10,9 @@ import { AiFillGithub } from "react-icons/ai";
 import { AiFillTwitterCircle } from "react-icons/ai";
 import { AiFillInstagram } from "react-icons/ai";
 import { Modal } from "../organisms/Modal";
+import { FadeIn } from "../animations/FadeIn";
+import { SlideUp } from "../animations/SlideUp";
+import { Loading } from "../atoms/Loading";
 
 const Container = styled.div`
   width: 80%;
@@ -49,32 +52,60 @@ const schema = z.object({
 
 export const Contact = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  const onSubmit = (data: FieldValues) => {
-    console.log(data);
-    setIsOpen(true);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const onSubmit = async (data: FieldValues) => {
+    try {
+      setIsLoading(true);
+      const response = await fetch("/api/send", {
+        method: "POST",
+        body: JSON.stringify(data),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      if (response.ok) {
+        setIsOpen(true);
+      } else {
+        // エラー処理
+        console.error("Failed to send the email");
+      }
+    } catch (error) {
+      console.error("There was an error sending the message", error);
+    } finally {
+      setIsLoading(false);
+    }
   };
+
+  if (isLoading) {
+    return <Loading />;
+  }
   return (
     <Container>
-      <Caption title="CONTACT" subTitle="get in touch" direction="center" />
-      <Form schema={schema} onSubmit={onSubmit}>
-        {({ register, formState: { errors } }) => (
-          <FormContainer>
-            <TextField
-              registration={register("email")}
-              label="メールアドレス"
-              error={errors.email?.message}
-            />
-            <TextField
-              registration={register("content")}
-              label="お問い合わせ内容"
-              multiline
-              rows={7}
-              error={errors.content?.message}
-            />
-            <Button width="30%">送信</Button>
-          </FormContainer>
-        )}
-      </Form>
+      <SlideUp>
+        {" "}
+        <Caption title="CONTACT" subTitle="get in touch" direction="center" />
+      </SlideUp>
+      <FadeIn>
+        <Form schema={schema} onSubmit={onSubmit}>
+          {({ register, formState: { errors } }) => (
+            <FormContainer>
+              <TextField
+                registration={register("email")}
+                label="メールアドレス"
+                error={errors.email?.message}
+              />
+              <TextField
+                registration={register("content")}
+                label="お問い合わせ内容"
+                multiline
+                rows={7}
+                error={errors.content?.message}
+              />
+              <Button width="30%">送信</Button>
+            </FormContainer>
+          )}
+        </Form>
+      </FadeIn>
       <Modal open={isOpen} onClose={() => setIsOpen(false)}>
         <p>送信が完了しました</p>
       </Modal>
