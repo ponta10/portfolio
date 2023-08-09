@@ -1,5 +1,5 @@
 import React from "react";
-import { Caption } from "../Caption";
+import { Caption } from "../atoms/Caption";
 import { SkillContainer } from "../SkillContainer";
 import { backends, devops, frontends } from "@/utils/skills";
 import { styled } from "styled-components";

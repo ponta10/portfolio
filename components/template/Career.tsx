@@ -1,5 +1,5 @@
 import React from "react";
-import { Caption } from "../Caption";
+import { Caption } from "../atoms/Caption";
 import { styled } from "styled-components";
 import { SlideRight } from "../animations/SlideRight";
 import { FadeIn } from "../animations/FadeIn";

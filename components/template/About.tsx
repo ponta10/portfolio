@@ -1,5 +1,5 @@
 import React from "react";
-import { Caption } from "../Caption";
+import { Caption } from "../atoms/Caption";
 import { styled } from "styled-components";
 import Image from "next/image";
 import backImage from "@/public/ponta.jpg";

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Caption } from "../Caption";
+import { Caption } from "../atoms/Caption";
 import { TextField } from "../atoms/TextField";
 import { Button } from "../atoms/Button";
 import { Footer } from "../organisms/Footer";

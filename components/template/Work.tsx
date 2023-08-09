@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { styled } from "styled-components";
-import { Caption } from "../Caption";
+import { Caption } from "../atoms/Caption";
 import { SlideLeft } from "../animations/SlideLeft";
 import { FadeIn } from "../animations/FadeIn";
 import { keyframes } from "styled-components";

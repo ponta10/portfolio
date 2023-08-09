@@ -7,7 +7,7 @@ import { Skill } from "@/components/template/Skill";
 import { About } from "@/components/template/About";
 import { Work } from "@/components/template/Work";
 import { Career } from "@/components/template/Career";
-import LoadingScreen from "@/components/LoadingScreen";
+import LoadingScreen from "@/components/atoms/LoadingScreen";
 
 const HomePageWrapper = styled.div`
   position: relative;
