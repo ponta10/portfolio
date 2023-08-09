@@ -1,5 +1,16 @@
 import React from "react";
-import { styled } from "styled-components";
+import { keyframes, styled } from "styled-components";
+
+const fadeIn = keyframes`
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(-50%);
+  }
+`;
 
 const Box = styled.div`
   position: absolute;
@@ -7,6 +18,7 @@ const Box = styled.div`
   transform: translateY(-50%);
   right: 15%;
   z-index: 2;
+  animation: ${fadeIn} 0.8s ease-in-out 1.1s;
 `;
 
 const Title = styled.h1`
