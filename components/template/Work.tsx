@@ -34,12 +34,16 @@ const WorkContainer = styled.div`
 
 const WorkBoxContainer = styled.a`
   width: calc(34% - 40px);
-  color: #fff; // 文字色を白に設定
+  color: ${(props) => props.theme.colors.text}; // 文字色を白に設定
   height: 42%;
   margin-bottom: 40px;
   &:hover {
-    opacity: 0.9;
     color: ${(props) => props.theme.colors.accent};
+    opacity: 0.95;
+
+    div {
+      outline: solid ${(props) => props.theme.colors.accent} 3px;
+    }
   }
 `;
 
@@ -47,36 +51,17 @@ const WorkBox = styled.div<{ bgImage: string }>`
   display: block;
   width: 100%;
   height: 100%;
-  background-color: #fff;
+  background-color: ${(props) => props.theme.colors.text};
   background-image: url(${(props) => props.bgImage}); // この行を追加
   background-size: cover; // 背景画像を要素に合わせてサイズ調整
   background-position: center; // 背景画像の位置を中央に設定
   margin-bottom: 20px;
   margin-top: -20px;
-  transform: all 0.3s linear;
 `;
 
 const WorkTitle = styled.span`
   text-align: center;
   display: block;
-`;
-
-// スクロールの目印として表示するコンポーネント
-const ScrollIndicator = styled.div`
-  position: absolute;
-  bottom: 10px;
-  right: 0px;
-  transform: translateX(-50%);
-  padding: 10px 20px;
-  background-color: rgba(255, 255, 255, 0.7);
-  color: #000;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: opacity 0.3s;
-
-  &:hover {
-    opacity: 0.8;
-  }
 `;
 
 export const Work = () => {

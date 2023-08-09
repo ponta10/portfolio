@@ -7,15 +7,6 @@ import { FadeIn } from "../animations/FadeIn";
 import { SlideLeft } from "../animations/SlideLeft";
 import { SlideUp } from "../animations/SlideUp";
 
-const timelineData = [
-  { year: "2002", event: "埼玉県で爆誕" },
-  { year: "2018", event: "浦和高校入学" },
-  { year: "2021", event: "慶應義塾大学入学" },
-  { year: "2021", event: "学生団体POSSE入会" },
-  { year: "2022", event: "株式会社パーツワンインターン" },
-  { year: "2023", event: "ヤフー株式会社サマーインターン" },
-];
-
 const Container = styled.div`
   width: 80%;
   margin: 0 auto;

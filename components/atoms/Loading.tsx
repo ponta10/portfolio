@@ -14,7 +14,7 @@ const spin = keyframes`
 const Loader = styled.div`
   border: 4px dashed rgba(255, 255, 255, 0.3); // 薄白の点線
   border-radius: 50%;
-  border-top: 4px dashed white; // 上部の線だけ白くする
+  border-top: 4px dashed ${(props) => props.theme.colors.text}; // 上部の線だけ白くする
   width: 40px;
   height: 40px;
   animation: ${spin} 1s linear infinite;
@@ -27,11 +27,11 @@ const Background = styled.div`
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: ${(props) => props.theme.colors.base};
 `;
 
 const LoadingText = styled.p`
-  color: white;
+  color: ${(props) => props.theme.colors.text};
   font-size: 16px;
   margin-top: 20px;
 `;

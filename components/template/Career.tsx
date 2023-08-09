@@ -66,7 +66,7 @@ const Event = styled.div`
   .box {
     padding: 16px 20px;
     background: ${(props) => props.theme.colors.gray};
-    color: ${(props) => props.theme.colors.white};
+    color: ${(props) => props.theme.colors.text};
     position: relative;
     border-radius: 6px;
     box-shadow: 1px 1px 3px 1px ${(props) => props.theme.colors.subText};

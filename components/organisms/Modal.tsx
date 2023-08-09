@@ -41,7 +41,7 @@ interface ModalContentProps {
 const ModalContent = styled.div<ModalContentProps>`
   width: ${(props) => props.width}px;
   background: ${(props) => props.theme.colors.gray};
-  color: ${(props) => props.theme.colors.white};
+  color: ${(props) => props.theme.colors.text};
   padding: 40px;
   position: relative;
   border-radius: 4px;
