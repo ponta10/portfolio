@@ -11,20 +11,20 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
   const transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
-      user: "pponpon877@gmail.com",
-      pass: "qoviyjkllqjuteqe",
+      user: process.env.ADMIN_EMAIL,
+      pass: process.env.ADMIN_EMAIL_PASSWORD,
     },
   });
 
   const mailOptions = {
     from: email,
-    to: "pponpon877@gmail.com",
+    to: process.env.ADMIN_EMAIL,
     subject: `${email}からのお問い合わせ`,
     text: content,
   };
 
   const adminOptions = {
-    from: "pponpon877@gmail.com",
+    from: process.env.ADMIN_EMAIL,
     to: email,
     subject: "お問い合わせありがとうございます",
     text: `お問い合わせいただき、ありがとうございます。\n
