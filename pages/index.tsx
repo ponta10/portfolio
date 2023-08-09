@@ -7,6 +7,7 @@ import { Skill } from "@/components/template/Skill";
 import { About } from "@/components/template/About";
 import { Work } from "@/components/template/Work";
 import { Career } from "@/components/template/Career";
+import LoadingScreen from "@/components/LoadingScreen";
 
 const HomePageWrapper = styled.div`
   position: relative;
@@ -24,6 +25,7 @@ const HomePageWrapperBlack = styled(HomePageWrapper)`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  height: auto;
 `;
 
 const HomePageWrapperGrey = styled(HomePageWrapper)`
@@ -32,9 +34,22 @@ const HomePageWrapperGrey = styled(HomePageWrapper)`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  // height: auto;
 `;
 
 export default function Home() {
+  interface Section {
+    name: string;
+    component: React.ReactNode;
+  }
+
+  const sections: Section[] = [
+    { name: "about", component: <About /> },
+    { name: "career", component: <Career /> },
+    { name: "work", component: <Work /> },
+    { name: "skill", component: <Skill /> },
+    { name: "contact", component: <Contact /> },
+  ];
   return (
     <>
       <Element name="top">
@@ -43,31 +58,16 @@ export default function Home() {
           <Top />
         </HomePageWrapper>
       </Element>
-      <Element name="about">
-        <HomePageWrapperGrey>
-          <About />
-        </HomePageWrapperGrey>
-      </Element>
-      <Element name="career">
-        <HomePageWrapperBlack>
-          <Career />
-        </HomePageWrapperBlack>
-      </Element>
-      <Element name="work">
-        <HomePageWrapperGrey>
-          <Work />
-        </HomePageWrapperGrey>
-      </Element>
-      <Element name="skill">
-        <HomePageWrapperBlack>
-          <Skill />
-        </HomePageWrapperBlack>
-      </Element>
-      <Element name="contact">
-        <HomePageWrapperGrey>
-          <Contact />
-        </HomePageWrapperGrey>
-      </Element>
+      {sections.map((section, index) => {
+        const WrapperComponent =
+          index % 2 === 0 ? HomePageWrapperGrey : HomePageWrapperBlack;
+        return (
+          <Element key={section.name} name={section.name}>
+            <WrapperComponent>{section.component}</WrapperComponent>
+          </Element>
+        );
+      })}
+      <LoadingScreen></LoadingScreen>
     </>
   );
 }

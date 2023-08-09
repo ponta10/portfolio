@@ -5,6 +5,7 @@ import { backends, devops, frontends } from "@/utils/skills";
 import { styled } from "styled-components";
 import { SlideRight } from "../animations/SlideRight";
 import { FadeIn } from "../animations/FadeIn";
+import { SlideLeft } from "../animations/SlideLeft";
 
 const Container = styled.div`
   width: 80%;
@@ -22,11 +23,9 @@ export const Skill = () => {
           direction="right"
         />
       </SlideRight>
-      <FadeIn>
-        <SkillContainer label="frontend" data={frontends} />
-        <SkillContainer label="backend" data={backends} />
-        <SkillContainer label="DevOps" data={devops} />
-      </FadeIn>
+      <SkillContainer label="frontend" data={frontends} />
+      <SkillContainer label="backend" data={backends} />
+      <SkillContainer label="DevOps" data={devops} />
     </Container>
   );
 };

@@ -5,7 +5,6 @@ import Image from "next/image";
 import backImage from "@/public/ponta.jpg";
 import { FadeIn } from "../animations/FadeIn";
 import { SlideLeft } from "../animations/SlideLeft";
-import { SlideUp } from "../animations/SlideUp";
 
 const Container = styled.div`
   width: 80%;

@@ -126,6 +126,7 @@ interface TextProps {
 
 const Text = styled.p<TextProps>`
   color: ${(props) => props.theme.colors.subText};
+  white-space: nowrap;
   font-size: ${(props) => {
     switch (props.size) {
       case "sm":
@@ -160,7 +161,7 @@ export const Career = () => {
               <EventLine />
               <div className="box">
                 <Text>{event.year}</Text>
-                <Text size="lg">{event.description}</Text>
+                <Text>{event.description}</Text>
               </div>
             </EventComponent>
           );

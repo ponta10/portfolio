@@ -18,7 +18,7 @@ export const FadeIn = (props: fadeAnimationType) => {
    * 「triggerOnce」検知を一度だけ行うかどうか
    */
   const { ref, inView } = useInView({
-    rootMargin: "-100px",
+    rootMargin: "-200px",
     triggerOnce: true,
   });
 
@@ -39,9 +39,10 @@ export const FadeIn = (props: fadeAnimationType) => {
  */
 const SFadeElem = styled.span<{ inView: boolean }>`
   display: inline-block;
-  transition: opacity 0.6s cubic-bezier(0.47, 0, 0.745, 0.715);
+  transition: all 0.6s cubic-bezier(0.47, 0, 0.745, 0.715);
 
   //opacityをtrueなら1、falseなら0とする
   opacity: ${(props) => (props.inView ? 1 : 0)};
+  transform: translateY(${(props) => (props.inView ? "0" : "20px")});
   width: 100%;
 `;
