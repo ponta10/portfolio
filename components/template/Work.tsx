@@ -3,6 +3,7 @@ import { styled } from "styled-components";
 import { Caption } from "../Caption";
 import { SlideLeft } from "../animations/SlideLeft";
 import { FadeIn } from "../animations/FadeIn";
+import { keyframes } from "styled-components";
 
 interface Project {
   id: number;
@@ -10,6 +11,24 @@ interface Project {
   image: string;
   link: string;
 }
+
+const slideInFromRight = keyframes`
+  0% {
+    transform: translateX(60%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+`;
+
+const slideInFromLeft = keyframes`
+  0% {
+    transform: translateX(-60%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+`;
 
 const Container = styled.div`
   width: 80%;
@@ -26,10 +45,22 @@ const WorkContainer = styled.div`
   width: 100%;
   background: linear-gradient(150deg, #222, #000);
   height: 65vh;
-  overflow-y: scroll;
+  // overflow-y: scroll;
   gap: 40px;
   padding-left: 60px;
   position: relative;
+`;
+
+const WorksInnerContainer = styled.div<{
+  animationDirection: "left" | "right";
+}>`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  width: 100%;
+  animation: ${(props) =>
+      props.animationDirection === "right" ? slideInFromRight : slideInFromLeft}
+    0.6s forwards;
 `;
 
 const WorkBoxContainer = styled.a`
@@ -64,13 +95,87 @@ const WorkTitle = styled.span`
   display: block;
 `;
 
+const ArrowButton = styled.button`
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s;
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.3;
+  }
+  &:hover {
+    background-color: ${(props) => props.theme.colors.gray};
+    opacity: 0.9;
+  }
+`;
+
+const PrevButton = styled(ArrowButton)`
+  &::before {
+    content: "";
+    border-style: solid;
+    border-width: 7px 10px 7px 0;
+    border-color: transparent ${(props) => props.theme.colors.accent}
+      transparent transparent;
+    display: inline-block;
+  }
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+`;
+
+const NextButton = styled(ArrowButton)`
+  &::before {
+    content: "";
+    border-style: solid;
+    border-width: 7px 0 7px 10px;
+    border-color: transparent transparent transparent
+      ${(props) => props.theme.colors.accent};
+    display: inline-block;
+  }
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+`;
+
+const PaginationContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+`;
+
+const Dot = styled.span<{ active?: boolean }>`
+  width: 12px;
+  height: 12px;
+  background-color: ${(props) =>
+    props.active ? props.theme.colors.accent : props.theme.colors.gray};
+  border-radius: 50%;
+  margin: 0 6px;
+  transition: background-color 0.3s;
+  cursor: pointer;
+  &:hover {
+    background-color: ${(props) => props.theme.colors.accent};
+  }
+`;
+
 export const Work = () => {
+  const [animationDirection, setAnimationDirection] = useState<
+    "left" | "right"
+  >("left");
   const works: Project[] = [
     {
       id: 1,
       title: "Netflixクローン",
       image: "/netflix2.png",
-      link: "https://netflix-clone-seven-sandy-56.vercel.app/",
+      link: "https://netflix-clone-mu-rosy.vercel.app/",
     },
     {
       id: 2,
@@ -82,7 +187,7 @@ export const Work = () => {
     //   id: 3,
     //   title: "Netflixクローン",
     //   image: "/netflix2.png",
-    //   link: "https://netflix-clone-seven-sandy-56.vercel.app/",
+    //   link: "https://netflix-clone-mu-rosy.vercel.app/",
     // },
     // {
     //   id: 4,
@@ -94,7 +199,7 @@ export const Work = () => {
     //   id: 5,
     //   title: "Netflixクローン",
     //   image: "/netflix2.png",
-    //   link: "https://netflix-clone-seven-sandy-56.vercel.app/",
+    //   link: "https://netflix-clone-mu-rosy.vercel.app/",
     // },
     // {
     //   id: 6,
@@ -106,7 +211,7 @@ export const Work = () => {
     //   id: 7,
     //   title: "Netflixクローン",
     //   image: "/netflix2.png",
-    //   link: "https://netflix-clone-seven-sandy-56.vercel.app/",
+    //   link: "https://netflix-clone-mu-rosy.vercel.app/",
     // },
     // {
     //   id: 8,
@@ -115,6 +220,30 @@ export const Work = () => {
     //   link: "https://pontaro.net/",
     // },
   ];
+
+  const [currentPage, setCurrentPage] = useState<number>(0);
+  const worksPerPage = 6;
+  const totalPages = Math.ceil(works.length / worksPerPage);
+
+  const getCurrentWorks = (): Project[] => {
+    const start = currentPage * worksPerPage;
+    const end = start + worksPerPage;
+    return works.slice(start, end);
+  };
+
+  const handleNextPage = (): void => {
+    if (currentPage < totalPages - 1) {
+      setCurrentPage((prevPage) => prevPage + 1);
+      setAnimationDirection("right");
+    }
+  };
+
+  const handlePrevPage = (): void => {
+    if (currentPage > 0) {
+      setCurrentPage((prevPage) => prevPage - 1);
+      setAnimationDirection("left");
+    }
+  };
 
   return (
     <Container>
@@ -127,19 +256,38 @@ export const Work = () => {
       </SlideLeft>
       <FadeIn>
         <WorkContainer>
-          {works?.map((work) => (
-            <WorkBoxContainer
-              key={work?.id}
-              href={work?.link}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <WorkBox bgImage={work?.image}></WorkBox>
-              <WorkTitle>{work?.title}</WorkTitle>
-            </WorkBoxContainer>
-          ))}
-          {/* {works?.length >= 6 && <ScrollIndicator>スクロールしてください</ScrollIndicator>} */}
+          <WorksInnerContainer animationDirection={animationDirection}>
+            {getCurrentWorks()?.map((work) => (
+              <WorkBoxContainer
+                key={work?.id}
+                href={work?.link}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <WorkBox bgImage={work?.image}></WorkBox>
+                <WorkTitle>{work?.title}</WorkTitle>
+              </WorkBoxContainer>
+            ))}
+          </WorksInnerContainer>
+          <PrevButton
+            onClick={handlePrevPage}
+            disabled={currentPage === 0}
+          ></PrevButton>
+          <NextButton
+            onClick={handleNextPage}
+            disabled={currentPage === totalPages - 1}
+          ></NextButton>
         </WorkContainer>
+        <PaginationContainer>
+          {totalPages > 1 &&
+            Array.from({ length: totalPages }).map((_, index) => (
+              <Dot
+                key={index}
+                active={index === currentPage}
+                onClick={() => setCurrentPage(index)}
+              />
+            ))}
+        </PaginationContainer>
       </FadeIn>
     </Container>
   );
