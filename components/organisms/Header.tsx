@@ -27,7 +27,7 @@ const Container = styled.header`
 
 const Logo = styled(Link)`
   margin: 0;
-  cursor: pointer;  
+  cursor: pointer;
 `;
 
 const Nav = styled.nav`
@@ -45,7 +45,7 @@ const NavItem = styled(Link)`
   &.active {
     color: ${(props) => props.theme.colors.accent};
 
-    ${Underline} {
+    span {
       width: 100%;
     }
   }
@@ -53,7 +53,7 @@ const NavItem = styled(Link)`
   &:hover {
     color: ${(props) => props.theme.colors.accent};
 
-    ${Underline} {
+    span {
       width: 100%;
     }
   }

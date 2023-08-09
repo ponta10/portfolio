@@ -133,7 +133,6 @@ export const Contact = () => {
           <AiFillInstagram size={40} />
         </a>
       </IconContainer>
-      <Footer />
     </Container>
   );
 };
