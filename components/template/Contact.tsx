@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Caption } from "../atoms/Caption";
 import { TextField } from "../atoms/TextField";
 import { Button } from "../atoms/Button";
-import { Footer } from "../organisms/Footer";
 import { styled } from "styled-components";
 import { z } from "zod";
 import { FieldValues, Form } from "../atoms/Form";
