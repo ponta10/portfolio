@@ -4,7 +4,7 @@ import { ZodSchema } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import styled from "styled-components";
 
-export type FieldValues = Record<string, any>;
+export type FieldValues = Record<string, string>;
 
 interface FormProps {
   children: (methods: UseFormReturn<FieldValues>) => React.ReactNode;
@@ -19,7 +19,7 @@ interface FormProps {
   ) => boolean;
   handleValue?: boolean;
   name?: keyof FieldValues;
-  value?: any;
+  value?: string;
 }
 
 const StyledForm = styled.form`
@@ -63,7 +63,7 @@ export const Form: React.FC<FormProps> = ({
 
   useEffect(() => {
     if (handleValue) {
-      setValue(name || "", value);
+      setValue(name || "", value as string);
     }
   }, [value]);
 

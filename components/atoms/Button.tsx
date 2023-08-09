@@ -1,8 +1,9 @@
 import React from "react";
 import styled from "styled-components";
+import { ReactNode } from "react";
 
 interface ButtonProps {
-  children: any;
+  children: ReactNode;
   width?: string;
   color?: string;
   bgColor?: string;

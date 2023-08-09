@@ -1,11 +1,11 @@
-import React, { useEffect } from "react";
+import React, { ReactNode, useEffect } from "react";
 import { css, keyframes, styled } from "styled-components";
 import { AiOutlineClose } from "react-icons/ai";
 
 interface ModalProps {
   open: boolean;
   onClose: () => void;
-  children: any;
+  children: ReactNode;
   width?: number;
 }
 

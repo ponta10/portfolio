@@ -7,7 +7,7 @@ interface TextFieldProps {
   multiline?: boolean;
   rows?: number;
   registration?: object;
-  error?: any;
+  error?: string;
 }
 
 const Container = styled.div`

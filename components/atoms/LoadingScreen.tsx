@@ -1,7 +1,6 @@
 // components/LoadingScreen.js
 import React, { useEffect, useState } from "react";
 import styled, { keyframes } from "styled-components";
-import logo from "@/public/logo.png";
 
 const fill = keyframes`
   0% {

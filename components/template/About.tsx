@@ -11,30 +11,6 @@ const Container = styled.div`
   margin: 0 auto;
 `;
 
-const Timeline = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin: 20px 0;
-  color: ${(props) => props.theme?.colors.subText};
-`;
-
-const Event = styled.div`
-  text-align: center;
-  font-size: ${(props) => props.theme?.fontSizes.sm};
-`;
-
-const Year = styled.div`
-  font-size: ${(props) => props.theme?.fontSizes.md};
-  margin-bottom: 4px;
-`;
-
-const Line = styled.div`
-  flex-grow: 1;
-  height: 1px;
-  background: ${(props) => props.theme?.colors.gray};
-`;
-
 const ProfileContainer = styled.div`
   display: flex;
   justify-content: space-between;

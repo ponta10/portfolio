@@ -2,7 +2,6 @@ import React from "react";
 import { Caption } from "../atoms/Caption";
 import { styled } from "styled-components";
 import { SlideRight } from "../animations/SlideRight";
-import { FadeIn } from "../animations/FadeIn";
 import { SlideLeft } from "../animations/SlideLeft";
 
 const Container = styled.div`

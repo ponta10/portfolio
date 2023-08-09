@@ -4,8 +4,6 @@ import { SkillContainer } from "../SkillContainer";
 import { backends, devops, frontends } from "@/utils/skills";
 import { styled } from "styled-components";
 import { SlideRight } from "../animations/SlideRight";
-import { FadeIn } from "../animations/FadeIn";
-import { SlideLeft } from "../animations/SlideLeft";
 
 const Container = styled.div`
   width: 80%;
