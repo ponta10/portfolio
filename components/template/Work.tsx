@@ -56,7 +56,7 @@ const WorkContainer = styled.div`
   position: relative;
 
   @media (max-width: ${breakpoints.sm}) {
-   padding: 24px;
+    padding: 24px;
   }
 `;
 
@@ -71,10 +71,10 @@ const WorksInnerContainer = styled.div<{
       props.animationDirection === "right" ? slideInFromRight : slideInFromLeft}
     0.6s forwards;
 
-    @media (max-width: ${breakpoints.sm}) {
-      gap: 0;
-      align-items: center;
-    }
+  @media (max-width: ${breakpoints.sm}) {
+    gap: 0;
+    align-items: center;
+  }
 `;
 
 const WorkBoxContainer = styled.a`
@@ -297,7 +297,10 @@ export const Work = () => {
       </SlideLeft>
       <FadeIn>
         <WorkContainer>
-          <WorksInnerContainer animationDirection={animationDirection} key={currentPage}>
+          <WorksInnerContainer
+            animationDirection={animationDirection}
+            key={currentPage}
+          >
             {getCurrentWorks()?.map((work) => (
               <WorkBoxContainer
                 key={work?.id}
