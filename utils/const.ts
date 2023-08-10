@@ -38,3 +38,9 @@ export const devops: Skill[] = [
     { id: 3, name: 'Dokcer', image: `${BASE_URL}/docker.png`, work: 1, personal: 2 },
     { id: 4, name: 'Firebase', image: `${BASE_URL}/firebase.png`, work: 0, personal: 0.5 },
 ]
+
+export const breakpoints = {
+    sm: '600px',
+    md: '900px',
+    lg: '1200px'
+};
