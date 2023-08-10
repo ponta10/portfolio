@@ -18,7 +18,7 @@ export const FadeIn = (props: fadeAnimationType) => {
    * 「triggerOnce」検知を一度だけ行うかどうか
    */
   const { ref, inView } = useInView({
-    rootMargin: "-200px",
+    rootMargin: "-100px",
     triggerOnce: true,
   });
 

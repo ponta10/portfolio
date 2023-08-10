@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React, { useState } from "react";
 import { styled } from "styled-components";
-import { Skill } from "@/utils/skills";
+import { Skill, breakpoints } from "@/utils/const";
 import { Modal } from "./organisms/Modal";
 
 const Container = styled.div`
@@ -18,6 +18,10 @@ const Container = styled.div`
   cursor: pointer;
   &:hover {
     background-color: ${(props) => props.theme.colors.sub};
+  }
+
+  @media (max-width: ${breakpoints.sm}) {
+    width: calc(33% - 16px);
   }
 `;
 

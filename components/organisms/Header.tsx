@@ -3,6 +3,7 @@ import { Link } from "react-scroll";
 import styled from "styled-components";
 import Image from "next/image";
 import image from "@/public/logo.png";
+import { breakpoints } from "@/utils/const";
 
 const Underline = styled.span`
   display: block;
@@ -23,6 +24,10 @@ const Container = styled.header`
   width: 100vw;
   z-index: 2;
   padding: 40px;
+
+  @media (max-width: ${breakpoints.sm}) {
+    display: none;
+  }
 `;
 
 const Logo = styled(Link)`

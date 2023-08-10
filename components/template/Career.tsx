@@ -3,10 +3,14 @@ import { Caption } from "../atoms/Caption";
 import { styled } from "styled-components";
 import { SlideRight } from "../animations/SlideRight";
 import { SlideLeft } from "../animations/SlideLeft";
+import { breakpoints } from "@/utils/const";
 
 const Container = styled.div`
   width: 80%;
   margin: 0 auto;
+  @media (max-width: ${breakpoints.sm}) {
+    width: 100%;
+  }
 `;
 
 // Event タイプの定義
@@ -39,7 +43,7 @@ const events: Event[] = [
   },
   {
     year: "2023",
-    description: "株式会社CARTA HOLDINGSサマーインターン",
+    description: "CARTA HOLDINGSサマ-インターン",
   },
 ];
 
@@ -125,19 +129,10 @@ interface TextProps {
 
 const Text = styled.p<TextProps>`
   color: ${(props) => props.theme.colors.subText};
-  white-space: nowrap;
-  font-size: ${(props) => {
-    switch (props.size) {
-      case "sm":
-        return props.theme.fontSizes.sm;
-      case "md":
-        return props.theme.fontSizes.md;
-      case "lg":
-        return props.theme.fontSizes.lg;
-      default:
-        return props.theme.fontSizes.md; // if none of the above matches, apply 'md' size
-    }
-  }};
+  font-size: ${(props) => props.theme.fontSizes.md};
+  @media (max-width: ${breakpoints.sm}) {
+    font-size: ${(props) => props.theme.fontSizes.xs};
+  }
 `;
 
 export const Career = () => {

@@ -1,7 +1,7 @@
 import React from "react";
 import { styled } from "styled-components";
 import { SkillBox } from "./SkillBox";
-import { Skill } from "@/utils/skills";
+import { Skill, breakpoints } from "@/utils/const";
 
 interface SkillContainer {
   label: string;
@@ -11,6 +11,10 @@ interface SkillContainer {
 const Container = styled.div`
   margin-top: 36px;
   text-align: right;
+
+  @media (max-width: ${breakpoints.sm}) {
+    text-align: center;
+  }
 `;
 
 const Label = styled.div`
@@ -24,6 +28,10 @@ const Box = styled.div`
   gap: 16px;
   flex-wrap: wrap;
   justify-content: flex-end;
+
+  @media (max-width: ${breakpoints.sm}) {
+    justify-content: space-between;
+  }
 `;
 
 export const SkillContainer: React.FC<SkillContainer> = ({ label, data }) => {

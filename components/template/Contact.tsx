@@ -12,10 +12,14 @@ import { Modal } from "../organisms/Modal";
 import { FadeIn } from "../animations/FadeIn";
 import { SlideUp } from "../animations/SlideUp";
 import { Loading } from "../atoms/Loading";
+import { breakpoints } from "@/utils/const";
 
 const Container = styled.div`
   width: 80%;
   margin: 0 auto;
+  @media (max-width: ${breakpoints.sm}) {
+    width: 100%;
+  }
 `;
 
 const FormContainer = styled.div`
@@ -24,6 +28,10 @@ const FormContainer = styled.div`
   margin: 16px auto;
   button {
     margin-top: 24px;
+  }
+
+  @media (max-width: ${breakpoints.sm}) {
+    width: 100%;
   }
 `;
 
@@ -100,7 +108,7 @@ export const Contact = () => {
                 rows={7}
                 error={errors.content?.message}
               />
-              <Button width="30%">送信</Button>
+              <Button width="60%">送信</Button>
             </FormContainer>
           )}
         </Form>

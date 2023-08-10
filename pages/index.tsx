@@ -8,6 +8,7 @@ import { About } from "@/components/template/About";
 import { Work } from "@/components/template/Work";
 import { Career } from "@/components/template/Career";
 import LoadingScreen from "@/components/atoms/LoadingScreen";
+import { breakpoints } from "@/utils/const";
 
 const HomePageWrapper = styled.div`
   position: relative;
@@ -26,6 +27,10 @@ const HomePageWrapperBlack = styled(HomePageWrapper)`
   flex-direction: column;
   justify-content: center;
   height: auto;
+
+  @media (max-width: ${breakpoints.sm}) {
+    padding: 30px;
+  }
 `;
 
 const HomePageWrapperGrey = styled(HomePageWrapper)`
@@ -35,6 +40,10 @@ const HomePageWrapperGrey = styled(HomePageWrapper)`
   flex-direction: column;
   justify-content: center;
   // height: auto;
+
+  @media (max-width: ${breakpoints.sm}) {
+    padding: 30px;
+  }
 `;
 
 export default function Home() {

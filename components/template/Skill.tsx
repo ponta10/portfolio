@@ -1,13 +1,17 @@
 import React from "react";
 import { Caption } from "../atoms/Caption";
 import { SkillContainer } from "../SkillContainer";
-import { backends, devops, frontends } from "@/utils/skills";
+import { backends, breakpoints, devops, frontends } from "@/utils/const";
 import { styled } from "styled-components";
 import { SlideRight } from "../animations/SlideRight";
 
 const Container = styled.div`
   width: 80%;
   margin: 0 auto;
+  @media (max-width: ${breakpoints.sm}) {
+    width: 100%;
+    text-align: center;
+  }
 `;
 
 export const Skill = () => {

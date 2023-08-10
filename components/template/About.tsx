@@ -5,10 +5,14 @@ import Image from "next/image";
 import backImage from "@/public/ponta.jpg";
 import { FadeIn } from "../animations/FadeIn";
 import { SlideLeft } from "../animations/SlideLeft";
+import { breakpoints } from "@/utils/const";
 
 const Container = styled.div`
   width: 80%;
   margin: 0 auto;
+  @media (max-width: ${breakpoints.sm}) {
+    width: 100%;
+  }
 `;
 
 const ProfileContainer = styled.div`
@@ -22,6 +26,11 @@ const ProfileContainer = styled.div`
   box-shadow: 1px 1px 2px ${(props) => props.theme?.colors.gray};
   padding: 48px;
   background: linear-gradient(150deg, #222, #000);
+
+  @media (max-width: ${breakpoints.sm}) {
+    flex-direction: column;
+    padding: 24px 16px;
+  }
 `;
 
 const TextContainer = styled.div`
@@ -31,6 +40,10 @@ const TextContainer = styled.div`
 const Name = styled.div`
   font-size: ${(props) => props.theme.fontSizes.xl};
   letter-spacing: 3px;
+
+  @media (max-width: ${breakpoints.sm}) {
+    font-size: ${(props) => props.theme.fontSizes.lg};
+  }
 `;
 
 const Detail = styled.p`
@@ -40,6 +53,11 @@ const Detail = styled.p`
   white-space: pre-wrap;
   word-wrap: break-word;
   letter-spacing: 1px;
+
+  @media (max-width: ${breakpoints.sm}) {
+    width: 100%;
+    font-size: ${(props) => props.theme.fontSizes.sm};
+  }
 `;
 
 const StyledLink = styled.div`
@@ -48,11 +66,19 @@ const StyledLink = styled.div`
   align-items: center;
   width: 300px; // あなたの好きな幅に変更することができます
   color: ${(props) => props.theme.colors.subText};
+
+  @media (max-width: ${breakpoints.sm}) {
+    width: 150px;
+    font-size: ${(props) => props.theme.fontSizes.sm};
+  }
 `;
 
 const StyledImage = styled(Image)`
   //   filter: contrast(1.2) brightness(0.9);
   drop-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
+  @media (max-width: ${breakpoints.sm}) {
+    width: 200px;
+  }
 `;
 
 export const About = () => {

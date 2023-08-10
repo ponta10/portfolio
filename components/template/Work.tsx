@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { styled } from "styled-components";
 import { Caption } from "../atoms/Caption";
 import { SlideLeft } from "../animations/SlideLeft";
 import { FadeIn } from "../animations/FadeIn";
 import { keyframes } from "styled-components";
+import { breakpoints } from "@/utils/const";
 
 interface Project {
   id: number;
@@ -33,6 +34,10 @@ const slideInFromLeft = keyframes`
 const Container = styled.div`
   width: 80%;
   margin: 0 auto;
+
+  @media (max-width: ${breakpoints.sm}) {
+    width: 100%;
+  }
 `;
 
 const WorkContainer = styled.div`
@@ -49,6 +54,10 @@ const WorkContainer = styled.div`
   gap: 40px;
   padding-left: 60px;
   position: relative;
+
+  @media (max-width: ${breakpoints.sm}) {
+   padding: 24px;
+  }
 `;
 
 const WorksInnerContainer = styled.div<{
@@ -61,6 +70,11 @@ const WorksInnerContainer = styled.div<{
   animation: ${(props) =>
       props.animationDirection === "right" ? slideInFromRight : slideInFromLeft}
     0.6s forwards;
+
+    @media (max-width: ${breakpoints.sm}) {
+      gap: 0;
+      align-items: center;
+    }
 `;
 
 const WorkBoxContainer = styled.a`
@@ -75,6 +89,11 @@ const WorkBoxContainer = styled.a`
     div {
       outline: solid ${(props) => props.theme.colors.accent} 3px;
     }
+  }
+
+  @media (max-width: ${breakpoints.sm}) {
+    width: 100%;
+    height: 30%;
   }
 `;
 
@@ -197,13 +216,13 @@ export const Work = () => {
     // },
     // {
     //   id: 5,
-    //   title: "Netflixクローン",
+    //   title: "あああ",
     //   image: "/netflix2.png",
     //   link: "https://netflix-clone-mu-rosy.vercel.app/",
     // },
     // {
     //   id: 6,
-    //   title: "ぽんぽんプログラミング",
+    //   title: "aa",
     //   image: "/ponpon.png",
     //   link: "https://pontaro.net/",
     // },
@@ -222,7 +241,29 @@ export const Work = () => {
   ];
 
   const [currentPage, setCurrentPage] = useState<number>(0);
-  const worksPerPage = 6;
+  const [worksPerPage, setWorksPerPage] = useState<number>(6);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth <= parseInt(breakpoints.sm)) {
+        setWorksPerPage(2);
+      } else {
+        setWorksPerPage(6);
+      }
+    };
+
+    // 初回実行
+    handleResize();
+
+    // resizeイベントリスナを追加
+    window.addEventListener("resize", handleResize);
+
+    // クリーンアップ
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   const totalPages = Math.ceil(works.length / worksPerPage);
 
   const getCurrentWorks = (): Project[] => {
@@ -256,7 +297,7 @@ export const Work = () => {
       </SlideLeft>
       <FadeIn>
         <WorkContainer>
-          <WorksInnerContainer animationDirection={animationDirection}>
+          <WorksInnerContainer animationDirection={animationDirection} key={currentPage}>
             {getCurrentWorks()?.map((work) => (
               <WorkBoxContainer
                 key={work?.id}
