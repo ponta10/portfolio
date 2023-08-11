@@ -136,7 +136,7 @@ const Text = styled.p<TextProps>`
   color: ${(props) => props.theme.colors.subText};
   font-size: ${(props) => props.theme.fontSizes.md};
   @media (max-width: ${breakpoints.sm}) {
-    font-size: ${(props) => props.theme.fontSizes.xs};
+    font-size: ${(props) => props.theme.fontSizes.sm};
   }
 `;
 
