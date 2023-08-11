@@ -29,6 +29,10 @@ const HomePageWrapperBlack = styled(HomePageWrapper)`
   height: auto;
 
   @media (max-width: ${breakpoints.sm}) {
+    padding: 40px;
+  }
+
+  @media (max-width: ${breakpoints.sm}) {
     padding: 30px;
   }
 `;
@@ -39,7 +43,11 @@ const HomePageWrapperGrey = styled(HomePageWrapper)`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  // height: auto;
+  height: auto;
+
+  @media (max-width: ${breakpoints.md}) {
+    padding: 40px;
+  }
 
   @media (max-width: ${breakpoints.sm}) {
     padding: 30px;
@@ -76,7 +84,7 @@ export default function Home() {
           </Element>
         );
       })}
-      <LoadingScreen></LoadingScreen>
+      <LoadingScreen />
     </>
   );
 }

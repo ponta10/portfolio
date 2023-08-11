@@ -8,6 +8,11 @@ import { breakpoints } from "@/utils/const";
 const Container = styled.div`
   width: 80%;
   margin: 0 auto;
+
+  @media (max-width: ${breakpoints.md}) {
+    width: 90%;
+  }
+
   @media (max-width: ${breakpoints.sm}) {
     width: 100%;
   }
@@ -43,7 +48,7 @@ const events: Event[] = [
   },
   {
     year: "2023",
-    description: "CARTA HOLDINGSサマ-インターン",
+    description: "CARTA HOLDINGSサマーインターン",
   },
 ];
 

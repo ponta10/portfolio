@@ -10,6 +10,11 @@ import { breakpoints } from "@/utils/const";
 const Container = styled.div`
   width: 80%;
   margin: 0 auto;
+
+  @media (max-width: ${breakpoints.md}) {
+    width: 90%;
+  }
+
   @media (max-width: ${breakpoints.sm}) {
     width: 100%;
   }
@@ -27,8 +32,12 @@ const ProfileContainer = styled.div`
   padding: 48px;
   background: linear-gradient(150deg, #222, #000);
 
-  @media (max-width: ${breakpoints.sm}) {
+  @media (max-width: ${breakpoints.md}) {
     flex-direction: column;
+    padding: 48px 32px;
+  }
+
+  @media (max-width: ${breakpoints.sm}) {
     padding: 24px 16px;
   }
 `;
@@ -54,8 +63,11 @@ const Detail = styled.p`
   word-wrap: break-word;
   letter-spacing: 1px;
 
-  @media (max-width: ${breakpoints.sm}) {
+  @media (max-width: ${breakpoints.md}) {
     width: 100%;
+  }
+
+  @media (max-width: ${breakpoints.sm}) {
     font-size: ${(props) => props.theme.fontSizes.sm};
   }
 `;
@@ -76,8 +88,14 @@ const StyledLink = styled.div`
 const StyledImage = styled(Image)`
   //   filter: contrast(1.2) brightness(0.9);
   drop-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
-  @media (max-width: ${breakpoints.sm}) {
-    width: 200px;
+  object-fit: cover;
+
+  @media (max-width: ${breakpoints.lg}) {
+    width: 300px;
+  }
+
+  @media (max-width: ${breakpoints.md}) {
+    width: 100%;
   }
 `;
 

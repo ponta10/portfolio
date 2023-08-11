@@ -35,6 +35,10 @@ const Container = styled.div`
   width: 80%;
   margin: 0 auto;
 
+  @media (max-width: ${breakpoints.md}) {
+    width: 90%;
+  }
+
   @media (max-width: ${breakpoints.sm}) {
     width: 100%;
   }
@@ -91,6 +95,21 @@ const WorkBoxContainer = styled.a`
     }
   }
 
+  @media (max-width: ${breakpoints.xl}) {
+    width: calc(50% - 40px);
+    height: 38%;
+  }
+
+  @media (max-width: ${breakpoints.lg}) {
+    width: calc(50% - 40px);
+    height: 38%;
+  }
+
+  @media (max-width: ${breakpoints.md}) {
+    width: 100%;
+    height: 40%;
+  }
+
   @media (max-width: ${breakpoints.sm}) {
     width: 100%;
     height: 30%;
@@ -107,6 +126,14 @@ const WorkBox = styled.div<{ bgImage: string }>`
   background-position: center; // 背景画像の位置を中央に設定
   margin-bottom: 20px;
   margin-top: -20px;
+`;
+
+const WorkBoxInner = styled.div`
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
 `;
 
 const WorkTitle = styled.span`
@@ -308,7 +335,7 @@ export const Work = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <WorkBox bgImage={work?.image}></WorkBox>
+                <WorkBox bgImage={work?.image} />
                 <WorkTitle>{work?.title}</WorkTitle>
               </WorkBoxContainer>
             ))}
