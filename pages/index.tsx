@@ -43,10 +43,10 @@ const HomePageWrapperGrey = styled(HomePageWrapper)`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: auto;
 
   @media (max-width: ${breakpoints.md}) {
     padding: 40px;
+    height: auto;
   }
 
   @media (max-width: ${breakpoints.sm}) {
