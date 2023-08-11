@@ -128,14 +128,6 @@ const WorkBox = styled.div<{ bgImage: string }>`
   margin-top: -20px;
 `;
 
-const WorkBoxInner = styled.div`
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-`;
-
 const WorkTitle = styled.span`
   text-align: center;
   display: block;
