@@ -213,7 +213,7 @@ export const Work = () => {
       id: 1,
       title: "Netflixクローン",
       image: "/netflix2.png",
-      link: "https://netflix-clone-mu-rosy.vercel.app/",
+      link: "https://netflix-clone-six-pied.vercel.app/",
     },
     {
       id: 2,
