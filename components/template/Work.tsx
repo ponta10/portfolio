@@ -211,52 +211,22 @@ export const Work = () => {
   const works: Project[] = [
     {
       id: 1,
+      title: "TabeloGooglemap",
+      image: "/tabeloGooglemap.png",
+      link: "https://tabelogooglemap.vercel.app/",
+    },
+    {
+      id: 2,
       title: "Netflixクローン",
       image: "/netflix2.png",
       link: "https://netflix-clone-six-pied.vercel.app/",
     },
     {
-      id: 2,
+      id: 3,
       title: "ぽんぽんプログラミング",
       image: "/ponpon.png",
       link: "https://pontaro.net/",
     },
-    // {
-    //   id: 3,
-    //   title: "Netflixクローン",
-    //   image: "/netflix2.png",
-    //   link: "https://netflix-clone-mu-rosy.vercel.app/",
-    // },
-    // {
-    //   id: 4,
-    //   title: "ぽんぽんプログラミング",
-    //   image: "/ponpon.png",
-    //   link: "https://pontaro.net/",
-    // },
-    // {
-    //   id: 5,
-    //   title: "あああ",
-    //   image: "/netflix2.png",
-    //   link: "https://netflix-clone-mu-rosy.vercel.app/",
-    // },
-    // {
-    //   id: 6,
-    //   title: "aa",
-    //   image: "/ponpon.png",
-    //   link: "https://pontaro.net/",
-    // },
-    // {
-    //   id: 7,
-    //   title: "Netflixクローン",
-    //   image: "/netflix2.png",
-    //   link: "https://netflix-clone-mu-rosy.vercel.app/",
-    // },
-    // {
-    //   id: 8,
-    //   title: "ぽんぽんプログラミング",
-    //   image: "/ponpon.png",
-    //   link: "https://pontaro.net/",
-    // },
   ];
 
   const [currentPage, setCurrentPage] = useState<number>(0);
