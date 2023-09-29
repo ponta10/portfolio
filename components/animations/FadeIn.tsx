@@ -28,7 +28,7 @@ export const FadeIn = (props: fadeAnimationType) => {
      * refで指定すると対象の要素になる
      * inViewのtrueかfalseを受け取り、styled-componentに渡す
      */
-    <SFadeElem inView={inView} ref={ref}>
+    <SFadeElem $inview={inView} ref={ref}>
       {children}
     </SFadeElem>
   );
@@ -37,12 +37,12 @@ export const FadeIn = (props: fadeAnimationType) => {
 /**
  * ★inView(trueかfalse)で受け取り、それに応じてcssを切り替える
  */
-const SFadeElem = styled.span<{ inView: boolean }>`
+const SFadeElem = styled.span<{ $inview: boolean }>`
   display: inline-block;
   transition: all 0.6s cubic-bezier(0.47, 0, 0.745, 0.715);
 
   //opacityをtrueなら1、falseなら0とする
-  opacity: ${(props) => (props.inView ? 1 : 0)};
-  transform: translateY(${(props) => (props.inView ? "0" : "20px")});
+  opacity: ${(props) => (props.$inview ? 1 : 0)};
+  transform: translateY(${(props) => (props.$inview ? "0" : "20px")});
   width: 100%;
 `;

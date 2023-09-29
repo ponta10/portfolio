@@ -28,7 +28,7 @@ export const SlideRight = (props: fadeAnimationType) => {
      * refで指定すると対象の要素になる
      * inViewのtrueかfalseを受け取り、styled-componentに渡す
      */
-    <SlideFromRightElem inView={inView} ref={ref}>
+    <SlideFromRightElem $inview={inView} ref={ref}>
       {children}
     </SlideFromRightElem>
   );
@@ -37,12 +37,12 @@ export const SlideRight = (props: fadeAnimationType) => {
 /**
  * ★inView(trueかfalse)で受け取り、それに応じてcssを切り替える
  */
-const SlideFromRightElem = styled.span<{ inView: boolean }>`
+const SlideFromRightElem = styled.span<{ $inview: boolean }>`
   display: inline-block;
   transition:
     transform 0.6s cubic-bezier(0.47, 0, 0.745, 0.715),
     opacity 0.6s cubic-bezier(0.47, 0, 0.745, 0.715);
-  transform: translateX(${(props) => (props.inView ? "0" : "50px")});
-  opacity: ${(props) => (props.inView ? 1 : 0)};
+  transform: translateX(${(props) => (props.$inview ? "0" : "50px")});
+  opacity: ${(props) => (props.$inview ? 1 : 0)};
   width: 100%;
 `;

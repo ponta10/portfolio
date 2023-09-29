@@ -28,7 +28,7 @@ export const SlideUp = (props: fadeAnimationType) => {
      * refで指定すると対象の要素になる
      * inViewのtrueかfalseを受け取り、styled-componentに渡す
      */
-    <SlideUpFadeElem inView={inView} ref={ref}>
+    <SlideUpFadeElem $inview={inView} ref={ref}>
       {children}
     </SlideUpFadeElem>
   );
@@ -37,12 +37,12 @@ export const SlideUp = (props: fadeAnimationType) => {
 /**
  * ★inView(trueかfalse)で受け取り、それに応じてcssを切り替える
  */
-const SlideUpFadeElem = styled.span<{ inView: boolean }>`
+const SlideUpFadeElem = styled.span<{ $inview: boolean }>`
   display: inline-block;
   transition:
     transform 0.6s cubic-bezier(0.47, 0, 0.745, 0.715),
     opacity 0.6s cubic-bezier(0.47, 0, 0.745, 0.715);
-  transform: translateY(${(props) => (props.inView ? "0" : "40px")});
-  opacity: ${(props) => (props.inView ? 1 : 0)};
+  transform: translateY(${(props) => (props.$inview ? "0" : "40px")});
+  opacity: ${(props) => (props.$inview ? 1 : 0)};
   width: 100%;
 `;

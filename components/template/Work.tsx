@@ -65,14 +65,14 @@ const WorkContainer = styled.div`
 `;
 
 const WorksInnerContainer = styled.div<{
-  animationDirection: "left" | "right";
+  $animationdirection: "left" | "right";
 }>`
   display: flex;
   flex-wrap: wrap;
   gap: 40px;
   width: 100%;
   animation: ${(props) =>
-      props.animationDirection === "right" ? slideInFromRight : slideInFromLeft}
+      props.$animationdirection === "right" ? slideInFromRight : slideInFromLeft}
     0.6s forwards;
 
   @media (max-width: ${breakpoints.sm}) {
@@ -116,12 +116,12 @@ const WorkBoxContainer = styled.a`
   }
 `;
 
-const WorkBox = styled.div<{ bgImage: string }>`
+const WorkBox = styled.div<{ $bgimage: string }>`
   display: block;
   width: 100%;
   height: 100%;
   background-color: ${(props) => props.theme.colors.text};
-  background-image: url(${(props) => props.bgImage}); // この行を追加
+  background-image: url(${(props) => props.$bgimage}); // この行を追加
   background-size: cover; // 背景画像を要素に合わせてサイズ調整
   background-position: center; // 背景画像の位置を中央に設定
   margin-bottom: 20px;
@@ -190,11 +190,11 @@ const PaginationContainer = styled.div`
   margin-top: 20px;
 `;
 
-const Dot = styled.span<{ active?: boolean }>`
+const Dot = styled.span<{ $active?: boolean }>`
   width: 12px;
   height: 12px;
   background-color: ${(props) =>
-    props.active ? props.theme.colors.accent : props.theme.colors.gray};
+    props.$active ? props.theme.colors.accent : props.theme.colors.gray};
   border-radius: 50%;
   margin: 0 6px;
   transition: background-color 0.3s;
@@ -205,15 +205,15 @@ const Dot = styled.span<{ active?: boolean }>`
 `;
 
 export const Work = () => {
-  const [animationDirection, setAnimationDirection] = useState<
+  const [$animationdirection, set$animationdirection] = useState<
     "left" | "right"
   >("left");
   const works: Project[] = [
     {
       id: 1,
-      title: "TabeloGooglemap",
-      image: "/tabeloGooglemap.png",
-      link: "https://www.tabelogoglemap.com/",
+      title: "DishFinder",
+      image: "/dishFinder.png",
+      link: "https://www.dish-finder.com/",
     },
     {
       id: 2,
@@ -264,14 +264,14 @@ export const Work = () => {
   const handleNextPage = (): void => {
     if (currentPage < totalPages - 1) {
       setCurrentPage((prevPage) => prevPage + 1);
-      setAnimationDirection("right");
+      set$animationdirection("right");
     }
   };
 
   const handlePrevPage = (): void => {
     if (currentPage > 0) {
       setCurrentPage((prevPage) => prevPage - 1);
-      setAnimationDirection("left");
+      set$animationdirection("left");
     }
   };
 
@@ -287,7 +287,7 @@ export const Work = () => {
       <FadeIn>
         <WorkContainer>
           <WorksInnerContainer
-            animationDirection={animationDirection}
+            $animationdirection={$animationdirection}
             key={currentPage}
           >
             {getCurrentWorks()?.map((work) => (
@@ -297,7 +297,7 @@ export const Work = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <WorkBox bgImage={work?.image} />
+                <WorkBox $bgimage={work?.image} />
                 <WorkTitle>{work?.title}</WorkTitle>
               </WorkBoxContainer>
             ))}
@@ -316,7 +316,7 @@ export const Work = () => {
             Array.from({ length: totalPages }).map((_, index) => (
               <Dot
                 key={index}
-                active={index === currentPage}
+                $active={index === currentPage}
                 onClick={() => setCurrentPage(index)}
               />
             ))}
