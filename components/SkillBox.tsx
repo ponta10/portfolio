@@ -80,7 +80,7 @@ export const SkillBox: React.FC<Skill> = ({ name, image, work, personal }) => {
                 priority
                 width={80}
                 height={80}
-                style={{ width: 'auto', height: 'auto' }}
+                style={{ width: "auto", height: "auto" }}
               />
             </Box>
             <Text>{name}</Text>
@@ -111,7 +111,7 @@ export const SkillBox: React.FC<Skill> = ({ name, image, work, personal }) => {
             priority
             width={40}
             height={40}
-            style={{ width: 'auto', height: 'auto' }}
+            style={{ width: "auto", height: "auto" }}
           />
         </Box>
         <Text size="sm">{name}</Text>
