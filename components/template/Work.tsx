@@ -72,7 +72,9 @@ const WorksInnerContainer = styled.div<{
   gap: 40px;
   width: 100%;
   animation: ${(props) =>
-      props.$animationdirection === "right" ? slideInFromRight : slideInFromLeft}
+      props.$animationdirection === "right"
+        ? slideInFromRight
+        : slideInFromLeft}
     0.6s forwards;
 
   @media (max-width: ${breakpoints.sm}) {

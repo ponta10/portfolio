@@ -6,24 +6,24 @@ import Image from "next/image";
 import styled from "styled-components";
 
 const BackgroundContainer = styled.div`
-position: relative;
-width: 100%; // 必要に応じて変更
-height: 100vh; // 必要に応じて変更
+  position: relative;
+  width: 100%; // 必要に応じて変更
+  height: 100vh; // 必要に応じて変更
 
-.backgroundImage {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-}
-`
+  .backgroundImage {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+`;
 
 export const Top = () => {
   return (
-<BackgroundContainer>
+    <BackgroundContainer>
       <Image
         src={backImage}
         alt="Background Image"
