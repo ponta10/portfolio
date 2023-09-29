@@ -213,7 +213,7 @@ export const Work = () => {
       id: 1,
       title: "TabeloGooglemap",
       image: "/tabeloGooglemap.png",
-      link: "https://tabelogooglemap.vercel.app/",
+      link: "https://www.tabelogoglemap.com/",
     },
     {
       id: 2,
