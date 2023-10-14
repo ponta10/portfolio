@@ -213,18 +213,24 @@ export const Work = () => {
   const works: Project[] = [
     {
       id: 1,
+      title: "GitHubGrow",
+      image: "/githubGrow.png",
+      link: "https://github-glow.vercel.app/",
+    },
+    {
+      id: 2,
       title: "DishFinder",
       image: "/dishFinder.png",
       link: "https://www.dish-finder.com/",
     },
     {
-      id: 2,
+      id: 3,
       title: "Netflixクローン",
       image: "/netflix2.png",
       link: "https://netflix-clone-six-pied.vercel.app/",
     },
     {
-      id: 3,
+      id: 4,
       title: "ぽんぽんプログラミング",
       image: "/ponpon.png",
       link: "https://pontaro.net/",
@@ -243,13 +249,10 @@ export const Work = () => {
       }
     };
 
-    // 初回実行
     handleResize();
 
-    // resizeイベントリスナを追加
     window.addEventListener("resize", handleResize);
 
-    // クリーンアップ
     return () => {
       window.removeEventListener("resize", handleResize);
     };
