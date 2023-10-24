@@ -17,7 +17,7 @@ export const frontends: Skill[] = [
     { id: 6, name: 'Next.js', image: `${BASE_URL}/next.png`, work: 1, personal: 1 },
     { id: 7, name: 'Redux', image: `${BASE_URL}/redux.png`, work: 1, personal: 1 },
     { id: 8, name: 'Tailwind', image: `${BASE_URL}/tailwind.png`, work: 1, personal: 1 },
-    { id: 9, name: 'SCSS', image: `${BASE_URL}/scss.png`, work: 0, personal: 2 },
+    { id: 9, name: 'Flutter', image: `${BASE_URL}/flutter.png`, work: 0, personal: 0.5 },
 ]
 
 export const backends: Skill[] = [
@@ -28,7 +28,7 @@ export const backends: Skill[] = [
     { id: 5, name: 'Nest.js', image: `${BASE_URL}/nest.png`, work: 0, personal: 0.5 },
     { id: 6, name: 'Go', image: `${BASE_URL}/go.png`, work: 0, personal: 0.5 },
     { id: 7, name: 'Python', image: `${BASE_URL}/python.png`, work: 0.5, personal: 1 },
-    { id: 8, name: 'Prisma', image: `${BASE_URL}/prisma.png`, work: 0.5, personal: 0.5 },
+    { id: 8, name: 'FastAPI', image: `${BASE_URL}/fast.png`, work: 0, personal: 0.5 },
     { id: 9, name: 'GraphQL', image: `${BASE_URL}/graphql.png`, work: 0, personal: 0.5 },
 ]
 
