@@ -4,7 +4,7 @@ import { styled } from "styled-components";
 import { Skill, breakpoints } from "@/utils/const";
 import { Modal } from "./organisms/Modal";
 
-const Container = styled.div`
+const Container = styled.div<{isWorked?: boolean}>`
   background-color: ${(props) => props.theme.colors.gray};
   padding: 16px;
   border-radius: 4px;
@@ -16,6 +16,7 @@ const Container = styled.div`
   width: 100px;
   box-shadow: 1px 1px 2px ${(props) => props.theme.colors.subText};
   cursor: pointer;
+  border: ${(props) => props.isWorked ? `1px solid ${props.theme.colors.accent}` : 'none'};
   &:hover {
     background-color: ${(props) => props.theme.colors.sub};
   }
@@ -53,7 +54,7 @@ interface BoxProps {
 
 const Box = styled.div<BoxProps>`
   height: ${(props) => props.height}px;
-  display: flex; // Add these
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -102,7 +103,7 @@ export const SkillBox: React.FC<Skill> = ({ name, image, work, personal }) => {
           </div>
         </ModalContainer>
       </Modal>
-      <Container onClick={() => setIsOpen(true)}>
+      <Container isWorked={!!work} onClick={() => setIsOpen(true)}>
         <Box height={48}>
           <Image
             src={image}
