@@ -4,7 +4,7 @@ import { styled } from "styled-components";
 import { Skill, breakpoints } from "@/utils/const";
 import { Modal } from "./organisms/Modal";
 
-const Container = styled.div<{isWorked?: boolean}>`
+const Container = styled.div<{ isWorked?: boolean }>`
   background-color: ${(props) => props.theme.colors.gray};
   padding: 16px;
   border-radius: 4px;
@@ -16,7 +16,8 @@ const Container = styled.div<{isWorked?: boolean}>`
   width: 100px;
   box-shadow: 1px 1px 2px ${(props) => props.theme.colors.subText};
   cursor: pointer;
-  border: ${(props) => props.isWorked ? `1px solid ${props.theme.colors.accent}` : 'none'};
+  border: ${(props) =>
+    props.isWorked ? `1px solid ${props.theme.colors.accent}` : "none"};
   &:hover {
     background-color: ${(props) => props.theme.colors.sub};
   }
