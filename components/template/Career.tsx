@@ -18,7 +18,6 @@ const Container = styled.div`
   }
 `;
 
-// Event タイプの定義
 interface Event {
   year: string;
   description: string;
@@ -27,32 +26,39 @@ interface Event {
 // 経歴データ
 const events: Event[] = [
   {
-    year: "2002",
+    year: "2002-10",
     description: "埼玉県で爆誕",
   },
   {
-    year: "2021",
+    year: "2021-04",
     description: "慶應義塾大学入学",
   },
   {
-    year: "2021",
+    year: "2021-10",
     description: "学生団体POSSE入会",
   },
   {
-    year: "2022",
+    year: "2022-10",
     description: "株式会社パーツワンインターン",
   },
   {
-    year: "2023",
+    year: "2023-08",
     description: "ヤフー株式会社サマーインターン",
   },
   {
-    year: "2023",
+    year: "2023-09",
     description: "CARTA HOLDINGSサマーインターン",
   },
+  {
+    year: "2023-11",
+    description: "MIXIオータムインターン",
+  },
+  // {
+  //   year: "2024-01",
+  //   description: "サイバーエージェントインターン",
+  // },
 ];
 
-// Styled components
 const TimelineWrapper = styled.div`
   position: relative;
   margin: 30px auto;
@@ -165,12 +171,10 @@ export const Career = () => {
             </EventComponent>
           );
 
-          // indexが偶数の場合、SlideLeftで囲む
           if (index % 2 === 0) {
             return <SlideLeft key={index}>{WrappedEvent}</SlideLeft>;
           }
 
-          // indexが奇数の場合、SlideRightで囲む
           return <SlideRight key={index}>{WrappedEvent}</SlideRight>;
         })}
       </TimelineWrapper>
