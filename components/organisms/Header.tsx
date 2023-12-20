@@ -46,6 +46,7 @@ const NavItem = styled(Link)`
   color: ${(props) => props.theme.colors.primary};
   position: relative;
   padding: 2px 0;
+  height: fit-content;
 
   &.active {
     color: ${(props) => props.theme.colors.accent};
