@@ -53,10 +53,10 @@ const events: Event[] = [
     year: "2023-11",
     description: "MIXIオータムインターン",
   },
-  // {
-  //   year: "2024-01",
-  //   description: "サイバーエージェントインターン",
-  // },
+  {
+    year: "2024-01",
+    description: "サイバーエージェントインターン",
+  },
 ];
 
 const TimelineWrapper = styled.div`
