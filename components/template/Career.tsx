@@ -57,6 +57,10 @@ const events: Event[] = [
     year: "2024-01",
     description: "サイバーエージェントインターン",
   },
+  {
+    year: "2024-02",
+    description: "株式会社Sansanインターン",
+  },
 ];
 
 const TimelineWrapper = styled.div`
