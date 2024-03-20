@@ -23,10 +23,7 @@ const Container = styled.div`
 const ProfileContainer = styled.div`
   display: flex;
   justify-content: space-between;
-  //   align-items: center;
-  //   gap: 40px;
   margin-top: 40px;
-  //   margin-bottom: 60px;
   border: 1px solid ${(props) => props.theme?.colors.gray};
   box-shadow: 1px 1px 2px ${(props) => props.theme?.colors.gray};
   padding: 48px;
@@ -76,7 +73,7 @@ const StyledLink = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 300px; // あなたの好きな幅に変更することができます
+  width: 300px;
   color: ${(props) => props.theme.colors.subText};
 
   @media (max-width: ${breakpoints.sm}) {
@@ -86,7 +83,6 @@ const StyledLink = styled.div`
 `;
 
 const StyledImage = styled(Image)`
-  //   filter: contrast(1.2) brightness(0.9);
   drop-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
   object-fit: cover;
 
