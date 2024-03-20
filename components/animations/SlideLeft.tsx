@@ -2,8 +2,7 @@ import { ReactNode } from "react";
 import { useInView } from "react-intersection-observer";
 import styled from "styled-components";
 
-//TypeScriptの型定義 (今回は無視してOK)
-type fadeAnimationType = {
+interface fadeAnimationType {
   children: ReactNode;
 };
 

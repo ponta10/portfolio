@@ -1,6 +1,5 @@
 import styled, { keyframes } from "styled-components";
 
-// アニメーションのキーフレーム定義
 const spin = keyframes`
   0% {
     transform: rotate(0deg);
@@ -10,7 +9,6 @@ const spin = keyframes`
   }
 `;
 
-// ローダーのスタイリング
 const Loader = styled.div`
   border: 4px dashed rgba(255, 255, 255, 0.3); // 薄白の点線
   border-radius: 50%;
@@ -20,7 +18,6 @@ const Loader = styled.div`
   animation: ${spin} 1s linear infinite;
 `;
 
-// 全体の背景
 const Background = styled.div`
   display: flex;
   flex-direction: column;
