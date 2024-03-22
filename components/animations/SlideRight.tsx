@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 interface fadeAnimationType {
   children: ReactNode;
-};
+}
 
 export const SlideRight = (props: fadeAnimationType) => {
   const { children } = props;
