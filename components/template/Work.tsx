@@ -213,15 +213,15 @@ export const Work = () => {
   const works: Project[] = [
     {
       id: 1,
-      title: "GitHubGrow",
-      image: "/githubGrow.png",
-      link: "https://github-glow.vercel.app/",
-    },
-    {
-      id: 2,
       title: "DishFinder",
       image: "/dishFinder.png",
       link: "https://www.dish-finder.com/",
+    },
+    {
+      id: 2,
+      title: "GitHubGrow",
+      image: "/githubGrow.png",
+      link: "https://github-glow.vercel.app/",
     },
     {
       id: 3,

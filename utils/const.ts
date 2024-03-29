@@ -9,12 +9,12 @@ export interface Skill {
 }
 
 export const frontends: Skill[] = [
-    { id: 1, name: 'HTML', image: `${BASE_URL}/html.png`, work: 1, personal: 2.5 },
-    { id: 2, name: 'CSS', image: `${BASE_URL}/css.png`, work: 1, personal: 2.5 },
-    { id: 3, name: 'JavaScript', image: `${BASE_URL}/js.png`, work: 1, personal: 2.5 },
-    { id: 4, name: 'TypeScript', image: `${BASE_URL}/ts.png`, work: 1, personal: 1.5 },
-    { id: 5, name: 'React', image: `${BASE_URL}/react.png`, work: 1, personal: 1.5 },
-    { id: 6, name: 'Next.js', image: `${BASE_URL}/next.png`, work: 1, personal: 1 },
+    { id: 1, name: 'HTML', image: `${BASE_URL}/html.png`, work: 2, personal: 2.5 },
+    { id: 2, name: 'CSS', image: `${BASE_URL}/css.png`, work: 2, personal: 2.5 },
+    { id: 3, name: 'JavaScript', image: `${BASE_URL}/js.png`, work: 2, personal: 2.5 },
+    { id: 4, name: 'TypeScript', image: `${BASE_URL}/ts.png`, work: 2, personal: 2.5 },
+    { id: 5, name: 'React', image: `${BASE_URL}/react.png`, work: 2, personal: 2.5 },
+    { id: 6, name: 'Next.js', image: `${BASE_URL}/next.png`, work: 1.5, personal: 2 },
     { id: 7, name: 'Redux', image: `${BASE_URL}/redux.png`, work: 1, personal: 1 },
     { id: 8, name: 'Tailwind', image: `${BASE_URL}/tailwind.png`, work: 1, personal: 1 },
     { id: 9, name: 'Flutter', image: `${BASE_URL}/flutter.png`, work: 0, personal: 0.5 },
@@ -26,7 +26,7 @@ export const backends: Skill[] = [
     { id: 3, name: 'Node.js', image: `${BASE_URL}/node.png`, work: 1, personal: 1.5 },
     { id: 4, name: 'Express', image: `${BASE_URL}/express2.png`, work: 0, personal: 0.5 },
     { id: 5, name: 'Nest.js', image: `${BASE_URL}/nest.png`, work: 0, personal: 0.5 },
-    { id: 6, name: 'Go', image: `${BASE_URL}/go.png`, work: 0, personal: 0.5 },
+    { id: 6, name: 'Go', image: `${BASE_URL}/go.png`, work: 0.5, personal: 1 },
     { id: 7, name: 'Python', image: `${BASE_URL}/python.png`, work: 0.5, personal: 1 },
     { id: 8, name: 'FastAPI', image: `${BASE_URL}/fast.png`, work: 0, personal: 0.5 },
     { id: 9, name: 'GraphQL', image: `${BASE_URL}/graphql.png`, work: 0, personal: 0.5 },
