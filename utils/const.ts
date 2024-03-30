@@ -9,9 +9,9 @@ export interface Skill {
 }
 
 export const frontends: Skill[] = [
-    { id: 1, name: 'HTML', image: `${BASE_URL}/html.png`, work: 2, personal: 2.5 },
-    { id: 2, name: 'CSS', image: `${BASE_URL}/css.png`, work: 2, personal: 2.5 },
-    { id: 3, name: 'JavaScript', image: `${BASE_URL}/js.png`, work: 2, personal: 2.5 },
+    { id: 1, name: 'HTML', image: `${BASE_URL}/html.png`, work: 2, personal: 3 },
+    { id: 2, name: 'CSS', image: `${BASE_URL}/css.png`, work: 2, personal: 3 },
+    { id: 3, name: 'JavaScript', image: `${BASE_URL}/js.png`, work: 2, personal: 3 },
     { id: 4, name: 'TypeScript', image: `${BASE_URL}/ts.png`, work: 2, personal: 2.5 },
     { id: 5, name: 'React', image: `${BASE_URL}/react.png`, work: 2, personal: 2.5 },
     { id: 6, name: 'Next.js', image: `${BASE_URL}/next.png`, work: 1.5, personal: 2 },
