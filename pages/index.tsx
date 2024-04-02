@@ -1,90 +1,17 @@
-import styled from "styled-components";
-import { Header } from "@/components/organisms/Header";
-import { Element } from "react-scroll";
-import { Contact } from "@/components/template/Contact";
-import { Top } from "@/components/template/Top";
-import { Skill } from "@/components/template/Skill";
-import { About } from "@/components/template/About";
-import { Work } from "@/components/template/Work";
-import { Career } from "@/components/template/Career";
+import { Suspense } from "react";
+import dynamic from "next/dynamic";
 import LoadingScreen from "@/components/atoms/LoadingScreen";
-import { breakpoints } from "@/utils/const";
 
-const HomePageWrapper = styled.div`
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
-  background-color: ${(props) => props.theme.colors.base};
-  color: ${(props) => props.theme.colors.text};
-  font-family: ${(props) => props.theme.fontFamily};
-`;
 
-const HomePageWrapperBlack = styled(HomePageWrapper)`
-  background-color: ${(props) => props.theme.colors.base};
-  padding: 60px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: auto;
+const Top = dynamic(() => import('@/components/pages/Top'), {
+  loading: () => <LoadingScreen />,
+});
 
-  @media (max-width: ${breakpoints.sm}) {
-    padding: 40px;
-  }
-
-  @media (max-width: ${breakpoints.sm}) {
-    padding: 30px;
-  }
-`;
-
-const HomePageWrapperGrey = styled(HomePageWrapper)`
-  background-color: ${(props) => props.theme.colors.sub};
-  padding: 60px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-
-  @media (max-width: ${breakpoints.md}) {
-    padding: 40px;
-    height: auto;
-  }
-
-  @media (max-width: ${breakpoints.sm}) {
-    padding: 30px;
-  }
-`;
 
 export default function Home() {
-  interface Section {
-    name: string;
-    component: React.ReactNode;
-  }
-
-  const sections: Section[] = [
-    { name: "about", component: <About /> },
-    { name: "career", component: <Career /> },
-    { name: "work", component: <Work /> },
-    { name: "skill", component: <Skill /> },
-    { name: "contact", component: <Contact /> },
-  ];
   return (
-    <>
-      <Element name="top">
-        <HomePageWrapper>
-          <Header />
-          <Top />
-        </HomePageWrapper>
-      </Element>
-      {sections.map((section, index) => {
-        const WrapperComponent =
-          index % 2 === 0 ? HomePageWrapperGrey : HomePageWrapperBlack;
-        return (
-          <Element key={section.name} name={section.name}>
-            <WrapperComponent>{section.component}</WrapperComponent>
-          </Element>
-        );
-      })}
-      <LoadingScreen />
-    </>
+    <Suspense fallback={<LoadingScreen />}>
+      <Top />
+    </Suspense>
   );
 }

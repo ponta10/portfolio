@@ -21,7 +21,7 @@ const BackgroundContainer = styled.div`
   }
 `;
 
-export const Top = () => {
+export const Hero = () => {
   return (
     <BackgroundContainer>
       <Image
