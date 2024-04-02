@@ -1,4 +1,3 @@
-// components/LoadingScreen.js
 import React, { useEffect, useState } from "react";
 import styled, { keyframes } from "styled-components";
 
@@ -46,18 +45,18 @@ const ProgressBar = styled.div`
 `;
 
 const LoadingScreen = () => {
-  const [isVisible, setIsVisible] = useState<boolean>(true); // 初めはtrueにして表示します
+  const [isVisible, setIsVisible] = useState<boolean>(true);
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      setIsVisible(false); // 2秒後に非表示にします
+      setIsVisible(false);
     }, 1100);
 
-    return () => clearTimeout(timer); // クリーンアップ関数
+    return () => clearTimeout(timer);
   }, []);
 
   if (!isVisible) {
-    return null; // isVisibleがfalseの場合、何も描画しません
+    return null;
   }
   return (
     <LoadingContainer>
