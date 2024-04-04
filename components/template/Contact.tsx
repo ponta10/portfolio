@@ -51,7 +51,7 @@ const IconContainer = styled.div`
 const GreyLine = styled.hr`
   border: none;
   border-top: 1px solid ${(props) => props.theme.colors.gray};
-  margin: 40px 0; // 上下のマージン調整（必要に応じて）
+  margin: 40px 0;
 `;
 
 const schema = z.object({
@@ -78,7 +78,6 @@ export const Contact = () => {
       if (response.ok) {
         setIsOpen(true);
       } else {
-        // エラー処理
         console.error("Failed to send the email");
       }
     } catch (error) {

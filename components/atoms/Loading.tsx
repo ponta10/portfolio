@@ -10,9 +10,9 @@ const spin = keyframes`
 `;
 
 const Loader = styled.div`
-  border: 4px dashed rgba(255, 255, 255, 0.3); // 薄白の点線
+  border: 4px dashed rgba(255, 255, 255, 0.3);
   border-radius: 50%;
-  border-top: 4px dashed ${(props) => props.theme.colors.text}; // 上部の線だけ白くする
+  border-top: 4px dashed ${(props) => props.theme.colors.text};
   width: 40px;
   height: 40px;
   animation: ${spin} 1s linear infinite;

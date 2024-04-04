@@ -23,7 +23,6 @@ interface Event {
   description: string;
 }
 
-// 経歴データ
 const events: Event[] = [
   {
     year: "2002-10",

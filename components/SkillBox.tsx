@@ -9,7 +9,7 @@ const Container = styled.div<{ isWorked?: boolean }>`
   padding: 16px;
   border-radius: 4px;
   text-align: center;
-  display: flex; // Add these
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -34,7 +34,7 @@ interface TextProps {
 
 const Text = styled.p<TextProps>`
   color: ${(props) => props.theme.colors.subText};
-  margin-top: 8px; // Adds space between image and text
+  margin-top: 8px;
   font-size: ${(props) => {
     switch (props.size) {
       case "sm":
@@ -44,7 +44,7 @@ const Text = styled.p<TextProps>`
       case "lg":
         return props.theme.fontSizes.lg;
       default:
-        return props.theme.fontSizes.md; // if none of the above matches, apply 'md' size
+        return props.theme.fontSizes.md;
     }
   }};
 `;

@@ -46,7 +46,6 @@ const Container = styled.div`
 
 const WorkContainer = styled.div`
   display: flex;
-  // align-items: center;
   flex-wrap: wrap;
   border: 1px solid ${(props) => props.theme?.colors.gray};
   box-shadow: 1px 1px 2px ${(props) => props.theme?.colors.gray};
@@ -54,7 +53,6 @@ const WorkContainer = styled.div`
   width: 100%;
   background: linear-gradient(150deg, #222, #000);
   height: 65vh;
-  // overflow-y: scroll;
   gap: 40px;
   padding-left: 60px;
   position: relative;
@@ -85,7 +83,7 @@ const WorksInnerContainer = styled.div<{
 
 const WorkBoxContainer = styled.a`
   width: calc(34% - 40px);
-  color: ${(props) => props.theme.colors.text}; // 文字色を白に設定
+  color: ${(props) => props.theme.colors.text};
   height: 42%;
   margin-bottom: 40px;
   &:hover {
@@ -123,9 +121,9 @@ const WorkBox = styled.div<{ $bgimage: string }>`
   width: 100%;
   height: 100%;
   background-color: ${(props) => props.theme.colors.text};
-  background-image: url(${(props) => props.$bgimage}); // この行を追加
-  background-size: cover; // 背景画像を要素に合わせてサイズ調整
-  background-position: center; // 背景画像の位置を中央に設定
+  background-image: url(${(props) => props.$bgimage});
+  background-size: cover;
+  background-position: center;
   margin-bottom: 20px;
   margin-top: -20px;
 `;

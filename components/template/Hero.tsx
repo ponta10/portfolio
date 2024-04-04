@@ -7,8 +7,8 @@ import styled from "styled-components";
 
 const BackgroundContainer = styled.div`
   position: relative;
-  width: 100%; // 必要に応じて変更
-  height: 100vh; // 必要に応じて変更
+  width: 100%;
+  height: 100vh;
 
   .backgroundImage {
     position: absolute;

@@ -16,7 +16,6 @@ const Underline = styled.span`
 const Container = styled.header`
   display: flex;
   justify-content: space-between;
-  // align-items: center;
   padding: 20px;
   position: fixed;
   top: 0;
