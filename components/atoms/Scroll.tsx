@@ -43,7 +43,6 @@ const Arrow = styled.div`
 function Scroll() {
   return (
     <div>
-      {/* その他のコンテンツ */}
       <ScrollNotifier>
         <ScrollText>Scroll</ScrollText>
         <Arrow />
