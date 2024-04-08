@@ -1,6 +1,6 @@
 import React from "react";
 import backImage from "@/public/top.jpg";
-import { TopTitle } from "@/components/TopTitle";
+import { TopTitle } from "@/components/organisms/TopTitle";
 import Scroll from "@/components/atoms/Scroll";
 import Image from "next/image";
 import styled from "styled-components";

@@ -1,6 +1,6 @@
 import React from "react";
 import { Caption } from "../atoms/Caption";
-import { SkillContainer } from "../SkillContainer";
+import { SkillContainer } from "../organisms/SkillContainer";
 import { backends, breakpoints, devops, frontends } from "@/utils/const";
 import { styled } from "styled-components";
 import { SlideRight } from "../animations/SlideRight";

@@ -2,7 +2,7 @@ import Image from "next/image";
 import React, { useState } from "react";
 import { styled } from "styled-components";
 import { Skill, breakpoints } from "@/utils/const";
-import { Modal } from "./organisms/Modal";
+import { Modal } from "./Modal";
 
 const Container = styled.div<{ isWorked?: boolean }>`
   background-color: ${(props) => props.theme.colors.gray};
