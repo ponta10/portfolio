@@ -40,7 +40,10 @@ export default class MyDocument extends Document {
       <Html>
         <Head />
         <title>三浦 広太 | Kota Miura</title>
-        <meta name="description" content="学生エンジニア三浦広太のポートフォリオサイトです。" />
+        <meta
+          name="description"
+          content="学生エンジニア三浦広太のポートフォリオサイトです。"
+        />
         <meta property="og:title" content="三浦 広太 | Kota Miura" />
         <meta
           property="og:description"
