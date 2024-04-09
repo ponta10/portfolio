@@ -47,7 +47,7 @@ export default class MyDocument extends Document {
           />
           <meta
             property="og:image"
-            content="https://drive.usercontent.google.com/download?id=1yeuOBPDMfK4svymhtQUjWh6WuQLcK1Nn"
+            content="http://drive.google.com/uc?export=view&id=1yeuOBPDMfK4svymhtQUjWh6WuQLcK1Nn"
           />
           <meta
             property="og:url"
@@ -55,7 +55,7 @@ export default class MyDocument extends Document {
           />
           <meta
             name="twitter:card"
-            content="https://drive.usercontent.google.com/download?id=1yeuOBPDMfK4svymhtQUjWh6WuQLcK1Nn"
+            content="http://drive.google.com/uc?export=view&id=1yeuOBPDMfK4svymhtQUjWh6WuQLcK1Nn"
           />
         </Head>
         <body>
