@@ -38,7 +38,26 @@ export default class MyDocument extends Document {
   render() {
     return (
       <Html>
-        <Head />
+        <Head>
+          <title>三浦 広太 | Kota Miura</title>
+          <meta property="og:title" content="三浦 広太 | Kota Miura" />
+          <meta
+            property="og:description"
+            content="学生エンジニア三浦広太のポートフォリオサイトです。"
+          />
+          <meta
+            property="og:image"
+            content="https://drive.google.com/file/d/1yeuOBPDMfK4svymhtQUjWh6WuQLcK1Nn/view?usp=drive_link"
+          />
+          <meta
+            property="og:url"
+            content="https://portfolio-eight-gamma-93.vercel.app/"
+          />
+          <meta
+            name="twitter:card"
+            content="https://drive.google.com/file/d/1yeuOBPDMfK4svymhtQUjWh6WuQLcK1Nn/view?usp=drive_link"
+          />
+        </Head>
         <body>
           <Main />
           <NextScript />
