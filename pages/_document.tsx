@@ -51,7 +51,7 @@ export default class MyDocument extends Document {
         />
         <meta
           property="og:image"
-          content="http://drive.google.com/uc?export=view&id=1yeuOBPDMfK4svymhtQUjWh6WuQLcK1Nn"
+          content="https://portfolio-eight-gamma-93.vercel.app/portfolio.png"
         />
         <meta
           property="og:url"
@@ -59,7 +59,7 @@ export default class MyDocument extends Document {
         />
         <meta
           name="twitter:card"
-          content="http://drive.google.com/uc?export=view&id=1yeuOBPDMfK4svymhtQUjWh6WuQLcK1Nn"
+          content="https://portfolio-eight-gamma-93.vercel.app/portfolio.png"
         />
         <body>
           <Main />
