@@ -42,15 +42,11 @@ const events: Event[] = [
   },
   {
     year: "2023-08",
-    description: "ヤフー株式会社サマーインターン",
-  },
-  {
-    year: "2023-09",
-    description: "CARTA HOLDINGSサマーインターン",
+    description: "ヤフー株式会社インターン",
   },
   {
     year: "2023-11",
-    description: "MIXIオータムインターン",
+    description: "MIXIインターン",
   },
   {
     year: "2024-01",
@@ -59,6 +55,18 @@ const events: Event[] = [
   {
     year: "2024-02",
     description: "株式会社Sansanインターン",
+  },
+  {
+    year: "2024-05",
+    description: "株式会社サイバー・バズ",
+  },
+  {
+    year: "2024-07",
+    description: "メルカリインターン",
+  },
+  {
+    year: "2025-04",
+    description: "メルカリ新卒入社",
   },
 ];
 

@@ -26,7 +26,7 @@ export const backends: Skill[] = [
     { id: 3, name: 'Node.js', image: `${BASE_URL}/node.png`, work: 1, personal: 1.5 },
     { id: 4, name: 'Express', image: `${BASE_URL}/express2.png`, work: 0, personal: 0.5 },
     { id: 5, name: 'Nest.js', image: `${BASE_URL}/nest.png`, work: 0, personal: 0.5 },
-    { id: 6, name: 'Go', image: `${BASE_URL}/go.png`, work: 0.5, personal: 1 },
+    { id: 6, name: 'Go', image: `${BASE_URL}/go.png`, work: 1.5, personal: 2 },
     { id: 7, name: 'Python', image: `${BASE_URL}/python.png`, work: 0.5, personal: 1 },
     { id: 8, name: 'FastAPI', image: `${BASE_URL}/fast.png`, work: 0, personal: 0.5 },
     { id: 9, name: 'GraphQL', image: `${BASE_URL}/graphql.png`, work: 0, personal: 0.5 },
@@ -34,7 +34,7 @@ export const backends: Skill[] = [
 
 export const devops: Skill[] = [
     { id: 1, name: 'GitHub', image: `${BASE_URL}/github.png`, work: 1, personal: 2 },
-    { id: 2, name: 'AWS', image: `${BASE_URL}/aws2.png`, work: 0.5, personal: 0.5 },
+    { id: 2, name: 'AWS', image: `${BASE_URL}/aws2.png`, work: 1, personal: 1 },
     { id: 3, name: 'Dokcer', image: `${BASE_URL}/docker.png`, work: 1, personal: 2 },
     { id: 4, name: 'Firebase', image: `${BASE_URL}/firebase.png`, work: 0, personal: 0.5 },
 ]
